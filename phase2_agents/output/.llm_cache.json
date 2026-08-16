@@ -1,0 +1,86 @@
+{
+  "01045157fabcf26ea974b4269a24e9d0": {
+    "findings": [],
+    "overall_severity": "none",
+    "confidence": 0.85,
+    "notes": "Narrative pass only; policy-based findings are produced deterministically by rules.py."
+  },
+  "45a280c613407c1136c9b5ce0825198e": {
+    "findings": [],
+    "overall_severity": "none",
+    "confidence": 0.85,
+    "notes": "Narrative pass only; policy-based findings are produced deterministically by rules.py."
+  },
+  "4eeee58ce265d877b193e554a56ed2c3": {
+    "findings": [],
+    "overall_severity": "none",
+    "confidence": 0.85,
+    "notes": "Narrative pass only; policy-based findings are produced deterministically by rules.py."
+  },
+  "966b5b9f2b057c23e28f7d1492056118": {
+    "findings": [],
+    "overall_severity": "none",
+    "confidence": 0.85,
+    "notes": "Narrative pass only; policy-based findings are produced deterministically by rules.py."
+  },
+  "ddbfbd571090960eae8a40ef99a6a61a": {
+    "findings": [],
+    "overall_severity": "none",
+    "confidence": 0.85,
+    "notes": "Narrative pass only; policy-based findings are produced deterministically by rules.py."
+  },
+  "e4bda08693954831bec8af4c2faf5e9d": {
+    "findings": [],
+    "overall_severity": "none",
+    "confidence": 0.85,
+    "notes": "Narrative pass only; policy-based findings are produced deterministically by rules.py."
+  },
+  "62e8002d3650643bf092f74c7edd79b9": {
+    "findings": [],
+    "overall_severity": "none",
+    "confidence": 0.85,
+    "notes": "Narrative pass only; policy-based findings are produced deterministically by rules.py."
+  },
+  "6fc28c00e12826af70d7eb762ba08b87": {
+    "findings": [],
+    "overall_severity": "none",
+    "confidence": 0.85,
+    "notes": "Narrative pass only; policy-based findings are produced deterministically by rules.py."
+  },
+  "72b91c42c6064cc8a108464f0db7691e": {
+    "findings": [],
+    "overall_severity": "none",
+    "confidence": 0.85,
+    "notes": "Narrative pass only; policy-based findings are produced deterministically by rules.py."
+  },
+  "958a35acf3e06a4236e98c816ca180ed": {
+    "findings": [],
+    "overall_severity": "none",
+    "confidence": 0.85,
+    "notes": "Narrative pass only; policy-based findings are produced deterministically by rules.py."
+  },
+  "f4971b4b320ef3c283eaa89090225d67": {
+    "findings": [],
+    "overall_severity": "none",
+    "confidence": 0.85,
+    "notes": "Narrative pass only; policy-based findings are produced deterministically by rules.py."
+  },
+  "7f02173c0b5d48f0084089cb1353cd63": {
+    "findings": [],
+    "overall_severity": "none",
+    "confidence": 0.85,
+    "notes": "Narrative pass only; policy-based findings are produced deterministically by rules.py."
+  },
+  "24691a1f114a00768a0f4aa7431c94bf": {
+    "findings": [],
+    "overall_severity": "none",
+    "confidence": 0.85,
+    "notes": "Narrative pass only; policy-based findings are produced deterministically by rules.py."
+  },
+  "893beb38f85bda632d971fd0b5c94cbd": {
+    "findings": [],
+    "overall_severity": "none",
+    "confidence": 0.85,
+    "notes": "Narrative pass only; policy-based findings are produced deterministically by rules.py."
+  }
+}

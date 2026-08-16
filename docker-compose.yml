@@ -1,0 +1,68 @@
+# =============================================================================
+# docker compose up            run the full pipeline once
+# docker compose run --rm app python run.py phase1
+#
+# The commented services below are NOT scaffolding for its own sake. They are
+# the components named in docs/production_readiness.md, kept here so the
+# migration is an uncomment-and-wire exercise rather than a design exercise.
+# Each carries its TODO number from that document.
+# =============================================================================
+services:
+  app:
+    build: .
+    image: contract-intelligence
+    environment:
+      # Telemetry destination. Defaults to output/logs/ inside the container.
+      CI_LOG_DIR: /app/output/logs
+      # Set with the collector below to ship spans instead of writing files.
+      # OTEL_EXPORTER_OTLP_ENDPOINT: http://otel-collector:4318
+      # Real LLM calls: also set model.provider: anthropic in agents.yml
+      # ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY}
+    volumes:
+      # Outputs land on the host so they can be read after the container exits.
+      - ./output:/app/output
+      - ./phase1_ingestion/output:/app/phase1_ingestion/output
+      - ./phase2_agents/output:/app/phase2_agents/output
+      - ./eval/output:/app/eval/output
+
+  # --- PRODUCTION SERVICES (see docs/production_readiness.md) ----------------
+  #
+  # ORDER MATTERS. Redis must land BEFORE RabbitMQ. Every guardrail we built is
+  # process-local: with N workers the budget guard spends N x the budget and the
+  # rate limiter allows N x the provider's limit, both silently. Scaling out
+  # before the control state is shared turns the guardrails into decoration.
+  # See production_readiness.md TODO-6/7/8.
+  #
+  # redis:                                    # TODO-6/7/8 - shared control state
+  #   image: redis:7-alpine
+  #   command: redis-server --appendonly yes  # budget counters must survive restart
+  #   volumes: [redis-data:/data]
+  #
+  # postgres:                                 # TODO-9/10 - system of record
+  #   image: postgres:16-alpine
+  #   environment:
+  #     POSTGRES_DB: contract_intelligence
+  #     POSTGRES_USER: pipeline
+  #     POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD}
+  #   volumes: [pg-data:/var/lib/postgresql/data]
+  #   healthcheck:
+  #     test: ["CMD-SHELL", "pg_isready -U pipeline"]
+  #
+  # rabbitmq:                                 # TODO-5 - work distribution
+  #   image: rabbitmq:3-management-alpine
+  #   ports: ["15672:15672"]                  # management UI
+  #
+  # worker:                                   # celery consumers
+  #   build: .
+  #   command: celery -A phase2_agents.tasks worker --loglevel=info --prefetch-multiplier=1
+  #   depends_on: [rabbitmq, redis, postgres]
+  #   deploy: { replicas: 3 }
+  #
+  # otel-collector:                           # TODO-12 - telemetry
+  #   image: otel/opentelemetry-collector-contrib:latest
+  #   command: ["--config=/etc/otel/config.yaml"]
+  #   volumes: ["./deploy/otel-config.yaml:/etc/otel/config.yaml:ro"]
+
+# volumes:
+#   redis-data:
+#   pg-data:

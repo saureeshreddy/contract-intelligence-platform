@@ -1,0 +1,472 @@
+{
+  "sources": {
+    "contract_management_api": {
+      "versions": {
+        "2.1": {
+          "fingerprint": "sha256:155c4bde0776b877dcc4d22369f473ec396be52a6eef46245814543f3752620e",
+          "first_seen": "2026-08-16T16:52:39.361Z",
+          "last_seen": "2026-08-16T16:52:39.361Z",
+          "last_run_id": "clauses_batch_1__7f61df85",
+          "record_count": 12,
+          "inventory": {
+            "clause_id": {
+              "path": "clause_id",
+              "types": [
+                "str"
+              ],
+              "present_count": 12,
+              "null_count": 0,
+              "values": [
+                "CLZ-2025-0001",
+                "CLZ-2025-0002",
+                "CLZ-2025-0003",
+                "CLZ-2025-0004",
+                "CLZ-2025-0005",
+                "CLZ-2025-0006",
+                "CLZ-2025-0007",
+                "CLZ-2025-0008",
+                "CLZ-2025-0009",
+                "CLZ-2025-0010",
+                "CLZ-2025-0011",
+                "CLZ-2025-0012"
+              ]
+            },
+            "clause_text": {
+              "path": "clause_text",
+              "types": [
+                "str"
+              ],
+              "present_count": 12,
+              "null_count": 0,
+              "values": null
+            },
+            "clause_type": {
+              "path": "clause_type",
+              "types": [
+                "str"
+              ],
+              "present_count": 12,
+              "null_count": 0,
+              "values": [
+                "consequential_damages",
+                "indemnification",
+                "insurance",
+                "limitation_of_liability",
+                "payment_terms",
+                "scope_of_work",
+                "security_clearance",
+                "termination"
+              ]
+            },
+            "client_name": {
+              "path": "client_name",
+              "types": [
+                "str"
+              ],
+              "present_count": 12,
+              "null_count": 0,
+              "values": [
+                "Apex Federal Solutions",
+                "DataVault Technologies",
+                "Meridian Health System",
+                "Northern State University"
+              ]
+            },
+            "contract_id": {
+              "path": "contract_id",
+              "types": [
+                "str"
+              ],
+              "present_count": 12,
+              "null_count": 0,
+              "values": [
+                "CTR-4401",
+                "CTR-4422",
+                "CTR-4438",
+                "CTR-4445"
+              ]
+            },
+            "effective_date": {
+              "path": "effective_date",
+              "types": [
+                "str"
+              ],
+              "present_count": 12,
+              "null_count": 0,
+              "values": [
+                "2025-06-15",
+                "2025-09-01",
+                "2025-10-01",
+                "2025-11-01"
+              ]
+            },
+            "expiration_date": {
+              "path": "expiration_date",
+              "types": [
+                "str"
+              ],
+              "present_count": 12,
+              "null_count": 0,
+              "values": [
+                "2028-08-31",
+                "2028-09-30",
+                "2029-06-14",
+                "2030-10-31"
+              ]
+            },
+            "last_modified": {
+              "path": "last_modified",
+              "types": [
+                "str"
+              ],
+              "present_count": 12,
+              "null_count": 0,
+              "values": [
+                "2025-06-15T08:00:00Z",
+                "2025-07-01T10:00:00Z",
+                "2025-08-10T14:30:00Z",
+                "2025-09-15T11:00:00Z",
+                "2025-10-05T16:45:00Z",
+                "2025-10-22T09:15:00Z",
+                "2025-11-10T13:00:00Z"
+              ]
+            },
+            "modified_by": {
+              "path": "modified_by",
+              "types": [
+                "str"
+              ],
+              "present_count": 12,
+              "null_count": 0,
+              "values": [
+                "finance_ops",
+                "legal_team",
+                "project_management",
+                "risk_management",
+                "security_compliance"
+              ]
+            },
+            "project_name": {
+              "path": "project_name",
+              "types": [
+                "str"
+              ],
+              "present_count": 12,
+              "null_count": 0,
+              "values": [
+                "Apex Secure Operations Facility",
+                "DV Southeast Data Center Campus",
+                "Meridian West Tower Expansion",
+                "NSU Science Complex Phase II"
+              ]
+            },
+            "section_ref": {
+              "path": "section_ref",
+              "types": [
+                "str"
+              ],
+              "present_count": 12,
+              "null_count": 0,
+              "values": [
+                "Section 10.1",
+                "Section 12.2",
+                "Section 14.1",
+                "Section 2.1",
+                "Section 4.2",
+                "Section 5.1",
+                "Section 7.1",
+                "Section 8.1",
+                "Section 8.3",
+                "Section 8.4",
+                "Section 9.1",
+                "Section 9.2"
+              ]
+            },
+            "status": {
+              "path": "status",
+              "types": [
+                "str"
+              ],
+              "present_count": 12,
+              "null_count": 0,
+              "values": [
+                "active",
+                "draft"
+              ]
+            }
+          }
+        },
+        "2.3": {
+          "fingerprint": "sha256:5cb9576eb28d466e2626e59ad3f40572e177da17517f49904fffaff2230105f3",
+          "first_seen": "2026-08-16T16:52:39.698Z",
+          "last_seen": "2026-08-16T16:52:39.698Z",
+          "last_run_id": "clauses_batch_2__6a33ab9b",
+          "record_count": 8,
+          "inventory": {
+            "category": {
+              "path": "category",
+              "types": [
+                "str"
+              ],
+              "present_count": 8,
+              "null_count": 0,
+              "values": [
+                "indemnification",
+                "insurance",
+                "limitation_of_liability",
+                "payment_terms",
+                "scope_of_work",
+                "termination"
+              ]
+            },
+            "clause_id": {
+              "path": "clause_id",
+              "types": [
+                "str"
+              ],
+              "present_count": 8,
+              "null_count": 0,
+              "values": [
+                "CLZ-2025-0013",
+                "CLZ-2025-0014",
+                "CLZ-2025-0015",
+                "CLZ-2025-0016",
+                "CLZ-2025-0017",
+                "CLZ-2025-0018",
+                "CLZ-2025-0019",
+                "CLZ-2025-0020"
+              ]
+            },
+            "clause_text": {
+              "path": "clause_text",
+              "types": [
+                "str"
+              ],
+              "present_count": 8,
+              "null_count": 0,
+              "values": null
+            },
+            "client_name": {
+              "path": "client_name",
+              "types": [
+                "str"
+              ],
+              "present_count": 8,
+              "null_count": 0,
+              "values": [
+                "DataVault Technologies",
+                "Greenfield Municipal Schools",
+                "Lakeshore Regional Medical Center",
+                "Meridian Health System"
+              ]
+            },
+            "contract_id": {
+              "path": "contract_id",
+              "types": [
+                "str"
+              ],
+              "present_count": 8,
+              "null_count": 0,
+              "values": [
+                "CTR-4401",
+                "CTR-4438",
+                "CTR-4452",
+                "CTR-4460"
+              ]
+            },
+            "effective_date": {
+              "path": "effective_date",
+              "types": [
+                "str"
+              ],
+              "present_count": 8,
+              "null_count": 0,
+              "values": [
+                "2025-09-01",
+                "2025-10-01",
+                "2025-12-01",
+                "2026-01-15"
+              ]
+            },
+            "expiration_date": {
+              "path": "expiration_date",
+              "types": [
+                "str"
+              ],
+              "present_count": 8,
+              "null_count": 0,
+              "values": [
+                "2028-08-31",
+                "2028-09-30",
+                "2028-11-30",
+                "2028-12-31"
+              ]
+            },
+            "last_modified": {
+              "path": "last_modified",
+              "types": [
+                "str"
+              ],
+              "present_count": 8,
+              "null_count": 0,
+              "values": [
+                "2025-11-25T11:20:00Z",
+                "2025-11-28T15:30:00Z",
+                "2025-11-30T08:45:00Z",
+                "2025-12-01T09:00:00Z",
+                "2025-12-01T10:00:00Z"
+              ]
+            },
+            "project_name": {
+              "path": "project_name",
+              "types": [
+                "str"
+              ],
+              "present_count": 8,
+              "null_count": 0,
+              "values": [
+                "DV Southeast Data Center Campus",
+                "Greenfield K-8 STEM Academy",
+                "LRMC Emergency Department Renovation",
+                "Meridian West Tower Expansion"
+              ]
+            },
+            "review_history": {
+              "path": "review_history",
+              "types": [
+                "object"
+              ],
+              "present_count": 8,
+              "null_count": 0,
+              "values": null
+            },
+            "review_history.last_review_date": {
+              "path": "review_history.last_review_date",
+              "types": [
+                "str"
+              ],
+              "present_count": 8,
+              "null_count": 3,
+              "values": [
+                "2025-11-22",
+                "2025-11-28",
+                "2025-11-29",
+                "2025-11-30",
+                "2025-12-01"
+              ]
+            },
+            "review_history.review_count": {
+              "path": "review_history.review_count",
+              "types": [
+                "int"
+              ],
+              "present_count": 8,
+              "null_count": 0,
+              "values": null
+            },
+            "review_history.reviews": {
+              "path": "review_history.reviews",
+              "types": [
+                "array"
+              ],
+              "present_count": 8,
+              "null_count": 0,
+              "values": null
+            },
+            "review_history.reviews[].action": {
+              "path": "review_history.reviews[].action",
+              "types": [
+                "str"
+              ],
+              "present_count": 6,
+              "null_count": 0,
+              "values": [
+                "approved",
+                "expanded",
+                "flagged"
+              ]
+            },
+            "review_history.reviews[].date": {
+              "path": "review_history.reviews[].date",
+              "types": [
+                "str"
+              ],
+              "present_count": 6,
+              "null_count": 0,
+              "values": [
+                "2025-11-20",
+                "2025-11-22",
+                "2025-11-28",
+                "2025-11-29",
+                "2025-11-30",
+                "2025-12-01"
+              ]
+            },
+            "review_history.reviews[].notes": {
+              "path": "review_history.reviews[].notes",
+              "types": [
+                "str"
+              ],
+              "present_count": 6,
+              "null_count": 0,
+              "values": [
+                "2x multiplier exceeds firm standard \u2014 recommend capping at 1x total fees",
+                "Added BMS integration and Tier IV compliance requirement per client request",
+                "Mutual indemnification \u2014 favorable terms",
+                "Original clause contained broad indemnification \u2014 revised to negligence standard",
+                "Retainage clause is non-standard \u2014 needs legal review",
+                "Revised language acceptable"
+              ]
+            },
+            "review_history.reviews[].reviewer": {
+              "path": "review_history.reviews[].reviewer",
+              "types": [
+                "str"
+              ],
+              "present_count": 6,
+              "null_count": 0,
+              "values": [
+                "J. Martinez",
+                "K. Chen",
+                "M. Thompson",
+                "R. Patel"
+              ]
+            },
+            "section_ref": {
+              "path": "section_ref",
+              "types": [
+                "str"
+              ],
+              "present_count": 8,
+              "null_count": 0,
+              "values": [
+                "Section 11.1",
+                "Section 2.1 (Amended)",
+                "Section 4.1",
+                "Section 5.3",
+                "Section 7.1",
+                "Section 8.1 (Amended)",
+                "Section 8.2",
+                "Section 9.1"
+              ]
+            },
+            "status": {
+              "path": "status",
+              "types": [
+                "str"
+              ],
+              "present_count": 8,
+              "null_count": 0,
+              "values": [
+                "active",
+                "draft",
+                "under_review"
+              ]
+            }
+          }
+        }
+      },
+      "latest_version": "2.3"
+    }
+  }
+}

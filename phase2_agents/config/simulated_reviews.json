@@ -1,0 +1,55 @@
+{
+  "_doc": [
+    "HUMAN-AUTHORED. Demo scaffolding standing in for a review UI.",
+    "",
+    "We permit simulating human overrides. Rather than inventing them,",
+    "most of what this system replays comes from real reviewer decisions already",
+    "present in the source data: clauses_batch_2.json carries a `review_history`",
+    "block with named reviewers, actions and notes. The auditor reads those",
+    "directly and compares them to what the agents concluded.",
+    "",
+    "This file adds what the source data cannot supply: batch 1 (API v2.1) has no",
+    "review_history field at all, so there are no recorded human decisions for",
+    "any of its 12 clauses. The entries below stand in for reviews that would",
+    "exist in a real deployment, and every one is marked source='simulated' in",
+    "the ledger so it can never be mistaken for a genuine reviewer record.",
+    "",
+    "In production this file does not exist. Overrides arrive from the review UI",
+    "and append directly to output/human_overrides.jsonl.",
+    "",
+    "IMPORTANT: an override changes the outcome for ONE clause. It does not",
+    "change a threshold, a prompt, or a rule. Only an approved learning proposal",
+    "does that -- see apply_proposal.py."
+  ],
+  "reviews": [
+    {
+      "clause_id": "CLZ-2025-0001",
+      "reviewer": "K. Chen",
+      "date": "2025-11-20",
+      "action": "confirmed",
+      "field": "risk.overall_severity",
+      "human_value": "high",
+      "rationale": "Agreed. Indemnifying the Owner for its own negligence is uninsurable under our professional liability policy. This is the clause that drove the Section 8.1 amendment.",
+      "note": "Confirms the agent rather than overriding it. Recorded because agreement is evidence too -- a ledger that only captures disagreement overstates the error rate."
+    },
+    {
+      "clause_id": "CLZ-2025-0010",
+      "reviewer": "K. Chen",
+      "date": "2025-11-22",
+      "action": "override",
+      "field": "risk.findings.indemnification.duty_to_defend_permitted",
+      "human_value": "accepted",
+      "rationale": "Duty to defend is non-negotiable on federal work and is priced into the fee. Accepting it here rather than treating it as a breach of standard.",
+      "note": "Second override on the same standard. Two occurrences is what triggers a learning proposal -- see agents.auditor.min_occurrences_for_proposal."
+    },
+    {
+      "clause_id": "CLZ-2025-0004",
+      "reviewer": "M. Thompson",
+      "date": "2025-11-25",
+      "action": "confirmed",
+      "field": "risk.overall_severity",
+      "human_value": "high",
+      "rationale": "Discretionary withholding is the real problem here, not the 60-day term. Escalating to the client's counsel."
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-08-16T16:52:40.315Z",
+  "bronze_records_read": 21,
+  "duplicates_dropped": 1,
+  "silver_records": 20,
+  "source_api_versions": [
+    "2.1",
+    "2.3"
+  ],
+  "bronze_run_ids": [
+    "clauses_batch_1__7f61df85",
+    "clauses_batch_2__6a33ab9b"
+  ],
+  "confirmed_aliases": {
+    "clause_type": "clause_category",
+    "category": "clause_category"
+  },
+  "null_counts_by_field": {
+    "clause_id": 0,
+    "contract_id": 0,
+    "client_name": 0,
+    "project_name": 0,
+    "clause_text": 0,
+    "section_ref": 0,
+    "effective_date": 0,
+    "expiration_date": 0,
+    "status": 0,
+    "last_modified": 0,
+    "clause_category": 0,
+    "modified_by": 8,
+    "review_history": 12
+  },
+  "records_with_unmapped_fields": [],
+  "clause_id_collisions": [],
+  "contract": "phase1_ingestion/data_contract.md"
+}

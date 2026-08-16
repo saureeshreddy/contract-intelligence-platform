@@ -1,0 +1,573 @@
+{
+  "ingestion_metadata": {
+    "contract_version": "1.0.0",
+    "normalized_at": "2026-08-16T16:52:40.313Z",
+    "source": "contract_management_api",
+    "source_api_versions": [
+      "2.1",
+      "2.3"
+    ],
+    "bronze_run_ids": [
+      "clauses_batch_1__7f61df85",
+      "clauses_batch_2__6a33ab9b"
+    ],
+    "total_records": 20,
+    "duplicates_dropped": 1,
+    "schema_notes": "Normalized from Bronze. 'clause_type' (v2.1) and 'category' (v2.3) unified as 'clause_category' via human-confirmed aliases. 'modified_by' is present in v2.1 only; 'review_history' in v2.3 only. null in those fields means the source API version did not carry the field, not that the value was empty."
+  },
+  "clauses": [
+    {
+      "clause_id": "CLZ-2025-0001",
+      "contract_id": "CTR-4401",
+      "client_name": "Meridian Health System",
+      "project_name": "Meridian West Tower Expansion",
+      "clause_category": "indemnification",
+      "clause_text": "The Consultant shall indemnify, defend, and hold harmless the Owner from and against all claims, damages, losses, and expenses arising out of or resulting from the performance of the Work, regardless of whether such claim is caused in part by the Owner's negligence.",
+      "section_ref": "Section 8.1",
+      "effective_date": "2025-09-01",
+      "expiration_date": "2028-08-31",
+      "status": "active",
+      "last_modified": "2025-10-22T09:15:00Z",
+      "modified_by": "legal_team",
+      "review_history": null,
+      "_unmapped_fields": [],
+      "_lineage": {
+        "run_id": "clauses_batch_1__7f61df85",
+        "source_file": "clauses_batch_1.json",
+        "source_api_version": "2.1",
+        "record_index": 0,
+        "record_hash": "sha256:e4876bb7ef3e1021049cf842ce4133848a1195fade5bef859f1a7b17c80f6670",
+        "ingested_at": "2026-08-16T16:52:39.361Z"
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0002",
+      "contract_id": "CTR-4401",
+      "client_name": "Meridian Health System",
+      "project_name": "Meridian West Tower Expansion",
+      "clause_category": "limitation_of_liability",
+      "clause_text": "The Consultant's total liability for all claims arising from this Agreement shall not exceed the total fees paid to the Consultant under this Agreement.",
+      "section_ref": "Section 8.3",
+      "effective_date": "2025-09-01",
+      "expiration_date": "2028-08-31",
+      "status": "active",
+      "last_modified": "2025-10-22T09:15:00Z",
+      "modified_by": "legal_team",
+      "review_history": null,
+      "_unmapped_fields": [],
+      "_lineage": {
+        "run_id": "clauses_batch_1__7f61df85",
+        "source_file": "clauses_batch_1.json",
+        "source_api_version": "2.1",
+        "record_index": 1,
+        "record_hash": "sha256:4085671c7bbcc694e1b2bab237c130b188d9fe454c6e79057c566a079c0f3a79",
+        "ingested_at": "2026-08-16T16:52:39.361Z"
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0003",
+      "contract_id": "CTR-4401",
+      "client_name": "Meridian Health System",
+      "project_name": "Meridian West Tower Expansion",
+      "clause_category": "insurance",
+      "clause_text": "The Consultant shall maintain Professional Liability Insurance with minimum coverage of $5,000,000 per claim and $10,000,000 aggregate for the duration of this Agreement and for five years following completion.",
+      "section_ref": "Section 9.2",
+      "effective_date": "2025-09-01",
+      "expiration_date": "2028-08-31",
+      "status": "active",
+      "last_modified": "2025-09-15T11:00:00Z",
+      "modified_by": "risk_management",
+      "review_history": null,
+      "_unmapped_fields": [],
+      "_lineage": {
+        "run_id": "clauses_batch_1__7f61df85",
+        "source_file": "clauses_batch_1.json",
+        "source_api_version": "2.1",
+        "record_index": 2,
+        "record_hash": "sha256:74d1765a224b7b4a890415fee8e28a181485e696240cb629c478c988ab239ba8",
+        "ingested_at": "2026-08-16T16:52:39.361Z"
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0004",
+      "contract_id": "CTR-4422",
+      "client_name": "Northern State University",
+      "project_name": "NSU Science Complex Phase II",
+      "clause_category": "payment_terms",
+      "clause_text": "Payment shall be made within sixty (60) days of receipt of a properly submitted invoice. The Owner reserves the right to withhold payment pending resolution of any disputes regarding the quality or completeness of the Work.",
+      "section_ref": "Section 5.1",
+      "effective_date": "2025-06-15",
+      "expiration_date": "2029-06-14",
+      "status": "active",
+      "last_modified": "2025-08-10T14:30:00Z",
+      "modified_by": "finance_ops",
+      "review_history": null,
+      "_unmapped_fields": [],
+      "_lineage": {
+        "run_id": "clauses_batch_1__7f61df85",
+        "source_file": "clauses_batch_1.json",
+        "source_api_version": "2.1",
+        "record_index": 3,
+        "record_hash": "sha256:55b8437aaa76b3ffb22eea9f342990562a80568ee7c049c362abd9218abb8fe5",
+        "ingested_at": "2026-08-16T16:52:39.361Z"
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0005",
+      "contract_id": "CTR-4422",
+      "client_name": "Northern State University",
+      "project_name": "NSU Science Complex Phase II",
+      "clause_category": "termination",
+      "clause_text": "The Owner may terminate this Agreement for convenience upon fourteen (14) days written notice. Upon termination, the Consultant shall be compensated for services satisfactorily performed through the termination date, with no additional compensation for lost profits or anticipated fees.",
+      "section_ref": "Section 12.2",
+      "effective_date": "2025-06-15",
+      "expiration_date": "2029-06-14",
+      "status": "active",
+      "last_modified": "2025-07-01T10:00:00Z",
+      "modified_by": "legal_team",
+      "review_history": null,
+      "_unmapped_fields": [],
+      "_lineage": {
+        "run_id": "clauses_batch_1__7f61df85",
+        "source_file": "clauses_batch_1.json",
+        "source_api_version": "2.1",
+        "record_index": 4,
+        "record_hash": "sha256:4f484e9fe3a268ae4cce9ab605696007a62091e6f3efd8b9a3b0be9c4a03c9d0",
+        "ingested_at": "2026-08-16T16:52:39.361Z"
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0006",
+      "contract_id": "CTR-4422",
+      "client_name": "Northern State University",
+      "project_name": "NSU Science Complex Phase II",
+      "clause_category": "scope_of_work",
+      "clause_text": "The Consultant shall provide complete architectural and engineering design services including but not limited to schematic design, design development, construction documents, and construction administration for the 120,000 GSF laboratory and classroom facility.",
+      "section_ref": "Section 2.1",
+      "effective_date": "2025-06-15",
+      "expiration_date": "2029-06-14",
+      "status": "active",
+      "last_modified": "2025-06-15T08:00:00Z",
+      "modified_by": "project_management",
+      "review_history": null,
+      "_unmapped_fields": [],
+      "_lineage": {
+        "run_id": "clauses_batch_1__7f61df85",
+        "source_file": "clauses_batch_1.json",
+        "source_api_version": "2.1",
+        "record_index": 5,
+        "record_hash": "sha256:a316dfa416f90fed3820e5fc5d38b3359a3eb1648f75464afd277bb7cca6b795",
+        "ingested_at": "2026-08-16T16:52:39.361Z"
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0007",
+      "contract_id": "CTR-4438",
+      "client_name": "DataVault Technologies",
+      "project_name": "DV Southeast Data Center Campus",
+      "clause_category": "indemnification",
+      "clause_text": "The Consultant shall indemnify and hold harmless the Owner from all claims arising from the Consultant's negligent acts, errors, or omissions in the performance of professional services. This indemnification shall not extend to claims arising from the Owner's sole negligence.",
+      "section_ref": "Section 7.1",
+      "effective_date": "2025-10-01",
+      "expiration_date": "2028-09-30",
+      "status": "active",
+      "last_modified": "2025-10-05T16:45:00Z",
+      "modified_by": "legal_team",
+      "review_history": null,
+      "_unmapped_fields": [],
+      "_lineage": {
+        "run_id": "clauses_batch_1__7f61df85",
+        "source_file": "clauses_batch_1.json",
+        "source_api_version": "2.1",
+        "record_index": 6,
+        "record_hash": "sha256:4312aec8d071f7436d8cfa8782cfe628e792906a29c4829d8dd037e2e0b4265c",
+        "ingested_at": "2026-08-16T16:52:39.361Z"
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0008",
+      "contract_id": "CTR-4438",
+      "client_name": "DataVault Technologies",
+      "project_name": "DV Southeast Data Center Campus",
+      "clause_category": "insurance",
+      "clause_text": "The Consultant shall maintain Commercial General Liability Insurance of $2,000,000 per occurrence, Professional Liability Insurance of $10,000,000 per claim, and Cyber Liability Insurance of $5,000,000 per claim for the duration of this Agreement.",
+      "section_ref": "Section 9.1",
+      "effective_date": "2025-10-01",
+      "expiration_date": "2028-09-30",
+      "status": "active",
+      "last_modified": "2025-10-05T16:45:00Z",
+      "modified_by": "risk_management",
+      "review_history": null,
+      "_unmapped_fields": [],
+      "_lineage": {
+        "run_id": "clauses_batch_1__7f61df85",
+        "source_file": "clauses_batch_1.json",
+        "source_api_version": "2.1",
+        "record_index": 7,
+        "record_hash": "sha256:c1359543f114cc3acabb90e35616d09811a2a63b92a9a5f0a0ba72fc055e73a6",
+        "ingested_at": "2026-08-16T16:52:39.361Z"
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0009",
+      "contract_id": "CTR-4438",
+      "client_name": "DataVault Technologies",
+      "project_name": "DV Southeast Data Center Campus",
+      "clause_category": "consequential_damages",
+      "clause_text": "Neither party shall be liable for any consequential, incidental, special, or punitive damages arising from or related to this Agreement, regardless of whether such damages are based on warranty, contract, tort, or any other legal theory.",
+      "section_ref": "Section 8.4",
+      "effective_date": "2025-10-01",
+      "expiration_date": "2028-09-30",
+      "status": "active",
+      "last_modified": "2025-10-05T16:45:00Z",
+      "modified_by": "legal_team",
+      "review_history": null,
+      "_unmapped_fields": [],
+      "_lineage": {
+        "run_id": "clauses_batch_1__7f61df85",
+        "source_file": "clauses_batch_1.json",
+        "source_api_version": "2.1",
+        "record_index": 8,
+        "record_hash": "sha256:912ef4b08e65ad68c84666cba0efb429832bf038f949b69fc914d7381b3b457e",
+        "ingested_at": "2026-08-16T16:52:39.361Z"
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0010",
+      "contract_id": "CTR-4445",
+      "client_name": "Apex Federal Solutions",
+      "project_name": "Apex Secure Operations Facility",
+      "clause_category": "indemnification",
+      "clause_text": "The Consultant shall defend, indemnify, and hold harmless the Owner and the Federal Government from and against any and all claims, damages, and expenses, including attorney's fees, arising from the Consultant's performance of services, to the fullest extent permitted by law.",
+      "section_ref": "Section 10.1",
+      "effective_date": "2025-11-01",
+      "expiration_date": "2030-10-31",
+      "status": "draft",
+      "last_modified": "2025-11-10T13:00:00Z",
+      "modified_by": "legal_team",
+      "review_history": null,
+      "_unmapped_fields": [],
+      "_lineage": {
+        "run_id": "clauses_batch_1__7f61df85",
+        "source_file": "clauses_batch_1.json",
+        "source_api_version": "2.1",
+        "record_index": 9,
+        "record_hash": "sha256:e171da1f6c04a7a897e78c6f5f30dac4c33bd9b295636343af3402012542108c",
+        "ingested_at": "2026-08-16T16:52:39.361Z"
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0011",
+      "contract_id": "CTR-4445",
+      "client_name": "Apex Federal Solutions",
+      "project_name": "Apex Secure Operations Facility",
+      "clause_category": "payment_terms",
+      "clause_text": "Payment shall be made within thirty (30) days of receipt of a properly submitted invoice conforming to Federal Acquisition Regulation (FAR) requirements. Interest on late payments shall accrue at the rate established by the Prompt Payment Act.",
+      "section_ref": "Section 4.2",
+      "effective_date": "2025-11-01",
+      "expiration_date": "2030-10-31",
+      "status": "draft",
+      "last_modified": "2025-11-10T13:00:00Z",
+      "modified_by": "finance_ops",
+      "review_history": null,
+      "_unmapped_fields": [],
+      "_lineage": {
+        "run_id": "clauses_batch_1__7f61df85",
+        "source_file": "clauses_batch_1.json",
+        "source_api_version": "2.1",
+        "record_index": 10,
+        "record_hash": "sha256:98e2c2a7e7e9dd1fe16a753cc03f9fff726e3c8e34a8ff745d17efc0cc8aab46",
+        "ingested_at": "2026-08-16T16:52:39.361Z"
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0012",
+      "contract_id": "CTR-4445",
+      "client_name": "Apex Federal Solutions",
+      "project_name": "Apex Secure Operations Facility",
+      "clause_category": "security_clearance",
+      "clause_text": "All personnel assigned to this project shall possess or obtain a minimum Secret-level security clearance prior to accessing project facilities or Controlled Unclassified Information (CUI). The Consultant shall comply with all applicable NIST SP 800-171 requirements for handling CUI.",
+      "section_ref": "Section 14.1",
+      "effective_date": "2025-11-01",
+      "expiration_date": "2030-10-31",
+      "status": "draft",
+      "last_modified": "2025-11-10T13:00:00Z",
+      "modified_by": "security_compliance",
+      "review_history": null,
+      "_unmapped_fields": [],
+      "_lineage": {
+        "run_id": "clauses_batch_1__7f61df85",
+        "source_file": "clauses_batch_1.json",
+        "source_api_version": "2.1",
+        "record_index": 11,
+        "record_hash": "sha256:6f7c92903a951bc5880dbaed2216cd3f623fb2870a577947743136a07cf320b1",
+        "ingested_at": "2026-08-16T16:52:39.361Z"
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0013",
+      "contract_id": "CTR-4401",
+      "client_name": "Meridian Health System",
+      "project_name": "Meridian West Tower Expansion",
+      "clause_category": "indemnification",
+      "clause_text": "The Consultant's indemnification obligations under this Agreement shall be limited to claims arising from the Consultant's negligent acts, errors, or omissions. The Consultant shall have no obligation to indemnify the Owner for claims arising from the Owner's negligence or the negligence of other parties.",
+      "section_ref": "Section 8.1 (Amended)",
+      "effective_date": "2025-09-01",
+      "expiration_date": "2028-08-31",
+      "status": "active",
+      "last_modified": "2025-11-28T15:30:00Z",
+      "modified_by": null,
+      "review_history": {
+        "reviews": [
+          {
+            "reviewer": "J. Martinez",
+            "date": "2025-11-20",
+            "action": "flagged",
+            "notes": "Original clause contained broad indemnification — revised to negligence standard"
+          },
+          {
+            "reviewer": "K. Chen",
+            "date": "2025-11-28",
+            "action": "approved",
+            "notes": "Revised language acceptable"
+          }
+        ],
+        "review_count": 2,
+        "last_review_date": "2025-11-28"
+      },
+      "_unmapped_fields": [],
+      "_lineage": {
+        "run_id": "clauses_batch_2__6a33ab9b",
+        "source_file": "clauses_batch_2.json",
+        "source_api_version": "2.3",
+        "record_index": 0,
+        "record_hash": "sha256:7110b14e7ab8e24373e5a7f3426ead572c9194683664047b31db38e607003762",
+        "ingested_at": "2026-08-16T16:52:39.698Z"
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0014",
+      "contract_id": "CTR-4452",
+      "client_name": "Greenfield Municipal Schools",
+      "project_name": "Greenfield K-8 STEM Academy",
+      "clause_category": "payment_terms",
+      "clause_text": "Payment shall be made within forty-five (45) days of receipt of invoice. The Owner may withhold up to 10% of each invoice as retainage, to be released upon substantial completion and final acceptance of all deliverables.",
+      "section_ref": "Section 5.3",
+      "effective_date": "2025-12-01",
+      "expiration_date": "2028-11-30",
+      "status": "under_review",
+      "last_modified": "2025-12-01T09:00:00Z",
+      "modified_by": null,
+      "review_history": {
+        "reviews": [
+          {
+            "reviewer": "M. Thompson",
+            "date": "2025-11-30",
+            "action": "flagged",
+            "notes": "Retainage clause is non-standard — needs legal review"
+          }
+        ],
+        "review_count": 1,
+        "last_review_date": "2025-11-30"
+      },
+      "_unmapped_fields": [],
+      "_lineage": {
+        "run_id": "clauses_batch_2__6a33ab9b",
+        "source_file": "clauses_batch_2.json",
+        "source_api_version": "2.3",
+        "record_index": 1,
+        "record_hash": "sha256:588b947517507a98a51031dc373a98bb2aa61131fe1527a477063d4ae354e5b1",
+        "ingested_at": "2026-08-16T16:52:39.698Z"
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0015",
+      "contract_id": "CTR-4452",
+      "client_name": "Greenfield Municipal Schools",
+      "project_name": "Greenfield K-8 STEM Academy",
+      "clause_category": "termination",
+      "clause_text": "Either party may terminate this Agreement for cause upon thirty (30) days written notice if the other party fails to cure a material breach within the notice period. The Owner may terminate for convenience upon twenty-one (21) days notice with compensation for completed work plus reasonable demobilization costs.",
+      "section_ref": "Section 11.1",
+      "effective_date": "2025-12-01",
+      "expiration_date": "2028-11-30",
+      "status": "active",
+      "last_modified": "2025-12-01T09:00:00Z",
+      "modified_by": null,
+      "review_history": {
+        "reviews": [],
+        "review_count": 0,
+        "last_review_date": null
+      },
+      "_unmapped_fields": [],
+      "_lineage": {
+        "run_id": "clauses_batch_2__6a33ab9b",
+        "source_file": "clauses_batch_2.json",
+        "source_api_version": "2.3",
+        "record_index": 2,
+        "record_hash": "sha256:5e39a1f796aac39a9d0c64b140b5cf62fc13d06b79f31b05a9121187708b439a",
+        "ingested_at": "2026-08-16T16:52:39.698Z"
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0016",
+      "contract_id": "CTR-4452",
+      "client_name": "Greenfield Municipal Schools",
+      "project_name": "Greenfield K-8 STEM Academy",
+      "clause_category": "insurance",
+      "clause_text": "The Consultant shall maintain Professional Liability Insurance with minimum coverage of $2,000,000 per claim and $4,000,000 aggregate. Workers' Compensation Insurance as required by state law. Commercial General Liability of $1,000,000 per occurrence.",
+      "section_ref": "Section 9.1",
+      "effective_date": "2025-12-01",
+      "expiration_date": "2028-11-30",
+      "status": "active",
+      "last_modified": "2025-12-01T09:00:00Z",
+      "modified_by": null,
+      "review_history": {
+        "reviews": [],
+        "review_count": 0,
+        "last_review_date": null
+      },
+      "_unmapped_fields": [],
+      "_lineage": {
+        "run_id": "clauses_batch_2__6a33ab9b",
+        "source_file": "clauses_batch_2.json",
+        "source_api_version": "2.3",
+        "record_index": 3,
+        "record_hash": "sha256:b4a04370399ce8bfe1cb12820082f3911e6aa1969eefba570877a3cd74b5e7ea",
+        "ingested_at": "2026-08-16T16:52:39.698Z"
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0017",
+      "contract_id": "CTR-4438",
+      "client_name": "DataVault Technologies",
+      "project_name": "DV Southeast Data Center Campus",
+      "clause_category": "scope_of_work",
+      "clause_text": "The Consultant shall provide full MEP engineering design services for the 250,000 SF Tier IV data center facility, including redundant power distribution (2N), precision cooling systems, fire suppression, and building management system integration. Design shall comply with Uptime Institute Tier IV requirements.",
+      "section_ref": "Section 2.1 (Amended)",
+      "effective_date": "2025-10-01",
+      "expiration_date": "2028-09-30",
+      "status": "active",
+      "last_modified": "2025-11-25T11:20:00Z",
+      "modified_by": null,
+      "review_history": {
+        "reviews": [
+          {
+            "reviewer": "R. Patel",
+            "date": "2025-11-22",
+            "action": "expanded",
+            "notes": "Added BMS integration and Tier IV compliance requirement per client request"
+          }
+        ],
+        "review_count": 1,
+        "last_review_date": "2025-11-22"
+      },
+      "_unmapped_fields": [],
+      "_lineage": {
+        "run_id": "clauses_batch_2__6a33ab9b",
+        "source_file": "clauses_batch_2.json",
+        "source_api_version": "2.3",
+        "record_index": 4,
+        "record_hash": "sha256:83841732a944d33a673a4c91241c9e34f81764b2bd5352fdb1e6d8bdf4060a18",
+        "ingested_at": "2026-08-16T16:52:39.698Z"
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0018",
+      "contract_id": "CTR-4438",
+      "client_name": "DataVault Technologies",
+      "project_name": "DV Southeast Data Center Campus",
+      "clause_category": "limitation_of_liability",
+      "clause_text": "The Consultant's total aggregate liability under this Agreement shall not exceed two times (2x) the total fees paid under this Agreement. This limitation shall not apply to claims arising from the Consultant's willful misconduct or fraudulent acts.",
+      "section_ref": "Section 8.2",
+      "effective_date": "2025-10-01",
+      "expiration_date": "2028-09-30",
+      "status": "under_review",
+      "last_modified": "2025-11-30T08:45:00Z",
+      "modified_by": null,
+      "review_history": {
+        "reviews": [
+          {
+            "reviewer": "J. Martinez",
+            "date": "2025-11-29",
+            "action": "flagged",
+            "notes": "2x multiplier exceeds firm standard — recommend capping at 1x total fees"
+          }
+        ],
+        "review_count": 1,
+        "last_review_date": "2025-11-29"
+      },
+      "_unmapped_fields": [],
+      "_lineage": {
+        "run_id": "clauses_batch_2__6a33ab9b",
+        "source_file": "clauses_batch_2.json",
+        "source_api_version": "2.3",
+        "record_index": 5,
+        "record_hash": "sha256:c0ee7375f91bc0376548315fa09f382893bacb716ed53abe58b109e1ce084bf7",
+        "ingested_at": "2026-08-16T16:52:39.698Z"
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0019",
+      "contract_id": "CTR-4460",
+      "client_name": "Lakeshore Regional Medical Center",
+      "project_name": "LRMC Emergency Department Renovation",
+      "clause_category": "indemnification",
+      "clause_text": "Each party shall indemnify the other party from claims arising from its own negligent acts or omissions. Neither party shall be required to indemnify the other for the other party's negligence. The duty to defend shall run concurrently with the duty to indemnify.",
+      "section_ref": "Section 7.1",
+      "effective_date": "2026-01-15",
+      "expiration_date": "2028-12-31",
+      "status": "draft",
+      "last_modified": "2025-12-01T10:00:00Z",
+      "modified_by": null,
+      "review_history": {
+        "reviews": [
+          {
+            "reviewer": "K. Chen",
+            "date": "2025-12-01",
+            "action": "approved",
+            "notes": "Mutual indemnification — favorable terms"
+          }
+        ],
+        "review_count": 1,
+        "last_review_date": "2025-12-01"
+      },
+      "_unmapped_fields": [],
+      "_lineage": {
+        "run_id": "clauses_batch_2__6a33ab9b",
+        "source_file": "clauses_batch_2.json",
+        "source_api_version": "2.3",
+        "record_index": 6,
+        "record_hash": "sha256:9e84d013df871335ed2c5dcd5dd617a4df9cafa34361c67ec50252924b4601e2",
+        "ingested_at": "2026-08-16T16:52:39.698Z"
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0020",
+      "contract_id": "CTR-4460",
+      "client_name": "Lakeshore Regional Medical Center",
+      "project_name": "LRMC Emergency Department Renovation",
+      "clause_category": "payment_terms",
+      "clause_text": "The Owner shall make payment within thirty (30) days of receipt of a properly submitted invoice. No retainage shall be withheld. Late payments shall accrue interest at a rate of 1.5% per month.",
+      "section_ref": "Section 4.1",
+      "effective_date": "2026-01-15",
+      "expiration_date": "2028-12-31",
+      "status": "draft",
+      "last_modified": "2025-12-01T10:00:00Z",
+      "modified_by": null,
+      "review_history": {
+        "reviews": [],
+        "review_count": 0,
+        "last_review_date": null
+      },
+      "_unmapped_fields": [],
+      "_lineage": {
+        "run_id": "clauses_batch_2__6a33ab9b",
+        "source_file": "clauses_batch_2.json",
+        "source_api_version": "2.3",
+        "record_index": 7,
+        "record_hash": "sha256:946e04597c788f7cc6eef380be4323ad0aee891ff2798dc997bd1b292ea37db2",
+        "ingested_at": "2026-08-16T16:52:39.698Z"
+      }
+    }
+  ]
+}

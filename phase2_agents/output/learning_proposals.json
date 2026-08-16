@@ -1,0 +1,38 @@
+{
+  "generated_at": "2026-08-16T16:52:54.520Z",
+  "run_id": "agents__20260816T165247",
+  "status": "PENDING_HUMAN_APPROVAL",
+  "authority": "ADVISORY ONLY. No agent reads this file back to change behaviour, and no agent process writes to config/ -- a test asserts it. Apply with: python phase2_agents/apply_proposal.py --id <id> --approved-by <name>",
+  "mechanism": "Repeated human overrides on the same firm standard produce a proposed diff to a readable policy file. A human reviews the diff and either approves it -- which records who, when and why -- or does not. The system never applies its own proposal. What changes is policy text, not model weights, so the change is reviewable by the people accountable for it.",
+  "proposal_count": 1,
+  "proposals": [
+    {
+      "proposal_id": "LP-indemnification-duty_to_defend_permitted",
+      "created_at": "2026-08-16T16:52:54.507Z",
+      "status": "PENDING_HUMAN_APPROVAL",
+      "kind": "adjust_firm_standard",
+      "summary": "Reviewers overrode 'indemnification.duty_to_defend_permitted' on 2 clauses. The standard may be too absolute.",
+      "evidence_override_ids": [
+        "OVR-CLZ-2025-0019-01",
+        "OVR-CLZ-2025-0010-02"
+      ],
+      "evidence_clause_ids": [
+        "CLZ-2025-0019",
+        "CLZ-2025-0010"
+      ],
+      "occurrences": 2,
+      "target_file": "phase2_agents/config/firm_standards.json",
+      "current_value": false,
+      "proposed_value": {
+        "value": false,
+        "exceptions": [
+          "Reviewed and accepted on CLZ-2025-0019 by K. Chen: Mutual indemnification — favorable terms",
+          "Reviewed and accepted on CLZ-2025-0010 by K. Chen: Duty to defend is non-negotiable on federal work and is priced into the fee. Accepting it here rather than treating it as a breach of standard."
+        ]
+      },
+      "rationale": "Each override was individually justified, and the justifications differ in kind (mutual indemnity; federal work where the term is non-negotiable and priced in). That suggests the standard needs documented exceptions rather than a changed default -- flagging every instance trains reviewers to ignore the flag.",
+      "risk_if_applied": "Adding exceptions reduces how often this is surfaced. If the exceptions are drawn too broadly, a genuinely bad clause passes unflagged. Counsel should review the wording before approval, and the next quarter's override rate on this standard should be watched.",
+      "authority": "ADVISORY ONLY. Nothing in the pipeline reads this file back to change behaviour. Apply with: python phase2_agents/apply_proposal.py --id <id> --approved-by <name>"
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "generated_at": "2026-08-16T16:52:39.698Z",
+  "run_id": "clauses_batch_2__6a33ab9b",
+  "source": "contract_management_api",
+  "api_version": "2.3",
+  "compared_against": "2.1",
+  "schema_fingerprint": "sha256:5cb9576eb28d466e2626e59ad3f40572e177da17517f49904fffaff2230105f3",
+  "record_count": 8,
+  "drift_detected": true,
+  "requires_human_action": true,
+  "summary": {
+    "INFO": 3,
+    "ADDITIVE": 1,
+    "NEEDS_HUMAN_CONFIRMATION": 1,
+    "BREAKING": 1
+  },
+  "events": [
+    {
+      "kind": "API_VERSION_CHANGED",
+      "severity": "INFO",
+      "path": "metadata.api_version",
+      "detail": "Source declared api_version 2.1 -> 2.3."
+    },
+    {
+      "kind": "FIELD_REMOVED",
+      "severity": "BREAKING",
+      "path": "modified_by",
+      "detail": "Present in 12 records of the previous schema, absent from every record of this one. Downstream consumers that require this field will break; the value is not recoverable.",
+      "action_required": "Confirm the field is genuinely retired upstream, then mark it nullable in data_contract.md and notify consumers."
+    },
+    {
+      "kind": "SUSPECTED_RENAME",
+      "severity": "NEEDS_HUMAN_CONFIRMATION",
+      "path": "clause_type -> category",
+      "detail": "Field 'clause_type' disappeared and 'category' appeared carrying 75% of the same values. This looks like a rename.",
+      "action_required": "A human must confirm by adding \"category\": \"<target_field>\" to phase1_ingestion/config/schema_aliases.json. Until then normalize.py emits null for the target field and lists 'category' in _unmapped_fields.",
+      "confidence": 0.75,
+      "evidence": {
+        "removed_values": [
+          "consequential_damages",
+          "indemnification",
+          "insurance",
+          "limitation_of_liability",
+          "payment_terms",
+          "scope_of_work",
+          "security_clearance",
+          "termination"
+        ],
+        "added_values": [
+          "indemnification",
+          "insurance",
+          "limitation_of_liability",
+          "payment_terms",
+          "scope_of_work",
+          "termination"
+        ]
+      }
+    },
+    {
+      "kind": "FIELD_ADDED",
+      "severity": "ADDITIVE",
+      "path": "review_history",
+      "detail": "New field of type object, present in 8 records. It carries 7 nested field(s). Landed in Bronze; not yet exposed in Silver.",
+      "action_required": "Decide whether Silver should surface this field, then extend the data contract.",
+      "evidence": {
+        "nested_paths": [
+          "review_history.last_review_date",
+          "review_history.review_count",
+          "review_history.reviews",
+          "review_history.reviews[].action",
+          "review_history.reviews[].date",
+          "review_history.reviews[].notes",
+          "review_history.reviews[].reviewer"
+        ]
+      }
+    },
+    {
+      "kind": "FIELD_REMOVED",
+      "severity": "INFO",
+      "path": "clause_type",
+      "detail": "Absent from the new batch, but explained by suspected rename to 'category'."
+    },
+    {
+      "kind": "ENUM_VALUE_ADDED",
+      "severity": "INFO",
+      "path": "status",
+      "detail": "New value(s) not seen in the previous schema: under_review.",
+      "evidence": {
+        "new_values": [
+          "under_review"
+        ],
+        "known_values": [
+          "active",
+          "draft"
+        ]
+      }
+    }
+  ],
+  "guarantee": "All records in this batch were written to Bronze unchanged, regardless of the drift reported above. Drift detection never filters, rewrites, or rejects data."
+}

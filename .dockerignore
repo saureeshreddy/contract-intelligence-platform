@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.git/
+.idea/
+.vscode/
+.DS_Store
+
+# Generated outputs are rebuilt inside the image by `run.py all`. Copying them
+# in would mean the image ships someone else's run rather than its own.
+phase1_ingestion/output/
+phase2_agents/output/
+eval/output/
+output/

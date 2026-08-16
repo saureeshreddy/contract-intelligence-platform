@@ -1,0 +1,14 @@
+{
+  "run_id": "clauses_batch_1__7f61df85",
+  "source_file": "clauses_batch_1.json",
+  "source_sha256": "7f61df85404bed1aba274c8ec580ffdb9561dc59d4ec68feb9a5b02ef798a673",
+  "source_api_version": "2.1",
+  "schema_fingerprint": "sha256:155c4bde0776b877dcc4d22369f473ec396be52a6eef46245814543f3752620e",
+  "records_in_source": 12,
+  "last_committed_index": 11,
+  "records_written": 12,
+  "status": "complete",
+  "ingested_at": "2026-08-16T16:52:39.361Z",
+  "updated_at": "2026-08-16T16:52:39.446Z",
+  "completed_at": "2026-08-16T16:52:39.446Z"
+}

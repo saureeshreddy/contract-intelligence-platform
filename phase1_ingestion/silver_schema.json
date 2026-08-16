@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/contract-intelligence/silver/clauses/1.0.0",
+  "title": "Contract Clause (Silver)",
+  "description": "Machine-readable twin of phase1_ingestion/data_contract.md. One object per line in output/silver/clauses.jsonl. The prose contract is authoritative for guarantees and limitations; this file is authoritative for shape.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "clause_id",
+    "contract_id",
+    "client_name",
+    "project_name",
+    "clause_category",
+    "clause_text",
+    "section_ref",
+    "effective_date",
+    "expiration_date",
+    "status",
+    "last_modified",
+    "modified_by",
+    "review_history",
+    "_unmapped_fields",
+    "_lineage"
+  ],
+  "properties": {
+    "clause_id": {
+      "type": "string",
+      "pattern": "^CLZ-[0-9]{4}-[0-9]{4}$",
+      "description": "Primary key. Unique within the dataset."
+    },
+    "contract_id": {
+      "type": "string",
+      "pattern": "^CTR-[0-9]+$"
+    },
+    "client_name": { "type": "string" },
+    "project_name": { "type": "string" },
+    "clause_category": {
+      "type": ["string", "null"],
+      "description": "Unified from clause_type (v2.1) / category (v2.3) via human-confirmed aliases. OPEN SET - do not switch exhaustively. null means no confirmed alias existed; see _unmapped_fields.",
+      "examples": [
+        "indemnification",
+        "limitation_of_liability",
+        "insurance",
+        "payment_terms",
+        "termination",
+        "scope_of_work",
+        "consequential_damages",
+        "security_clearance"
+      ]
+    },
+    "clause_text": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Verbatim from source. No cleaning or truncation."
+    },
+    "section_ref": {
+      "type": "string",
+      "description": "May carry an '(Amended)' marker. Supersession is NOT modelled - see data_contract.md section 3.3."
+    },
+    "effective_date": { "type": "string", "format": "date" },
+    "expiration_date": { "type": "string", "format": "date" },
+    "status": {
+      "type": "string",
+      "description": "OPEN SET. v2.3 introduced 'under_review' with no notice.",
+      "examples": ["active", "draft", "under_review"]
+    },
+    "last_modified": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Source system's timestamp, not ours. See _lineage.ingested_at for ours."
+    },
+    "modified_by": {
+      "type": ["string", "null"],
+      "description": "API v2.1 only. null means the source version did not carry the field, NOT that it was empty. Removed in v2.3 and not recoverable."
+    },
+    "review_history": {
+      "type": ["object", "null"],
+      "description": "API v2.3 only. null means the source version did not carry the field - NOT 'never reviewed'.",
+      "additionalProperties": false,
+      "required": ["reviews", "review_count", "last_review_date"],
+      "properties": {
+        "reviews": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["reviewer", "date", "action", "notes"],
+            "properties": {
+              "reviewer": { "type": "string", "description": "Human name. PII - see data_contract.md section 3.5." },
+              "date": { "type": "string", "format": "date" },
+              "action": { "type": "string", "examples": ["flagged", "approved", "expanded"] },
+              "notes": { "type": "string" }
+            }
+          }
+        },
+        "review_count": { "type": "integer", "minimum": 0 },
+        "last_review_date": { "type": ["string", "null"], "format": "date" }
+      }
+    },
+    "_unmapped_fields": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Source fields present in Bronze with no human-confirmed alias. Non-empty means a schema change is awaiting confirmation in config/schema_aliases.json. This is how the pipeline degrades visibly instead of silently."
+    },
+    "_lineage": {
+      "type": "object",
+      "description": "Traceability back to the exact Bronze record. Metadata, not contract data.",
+      "additionalProperties": false,
+      "required": [
+        "run_id",
+        "source_file",
+        "source_api_version",
+        "record_index",
+        "record_hash",
+        "ingested_at"
+      ],
+      "properties": {
+        "run_id": { "type": "string" },
+        "source_file": { "type": "string" },
+        "source_api_version": { "type": "string" },
+        "record_index": { "type": "integer", "minimum": 0 },
+        "record_hash": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+        "ingested_at": { "type": "string", "format": "date-time" }
+      }
+    }
+  }
+}

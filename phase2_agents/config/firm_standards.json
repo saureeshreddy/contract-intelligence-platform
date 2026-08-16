@@ -1,0 +1,125 @@
+{
+  "_doc": [
+    "HUMAN-OWNED FILE. No agent writes here. A test asserts it.",
+    "",
+    "This is the benchmark risk is judged against. It is the difference between",
+    "an auditable finding and an opinion:",
+    "",
+    "  NOT  'the model thought this clause was risky'",
+    "  BUT  'payment terms of 60 days exceed firm standard of 30",
+    "        (payment_terms.max_days_to_pay), set 2025-01-01 by legal_counsel'",
+    "",
+    "The second can be defended to a regulator, argued with by a lawyer, and",
+    "changed by an approved proposal. The first cannot.",
+    "",
+    "WHERE THESE VALUES CAME FROM",
+    "The 1x liability cap is not invented. It is stated in the source data:",
+    "clause CLZ-2025-0018 carries a review by J. Martinez reading '2x multiplier",
+    "exceeds firm standard - recommend capping at 1x total fees'. The remaining",
+    "values are calibrated against the accepted clauses in the same corpus and",
+    "would, in a real engagement, come from the firm's contract playbook.",
+    "",
+    "TO CHANGE ANYTHING HERE:",
+    "  python phase2_agents/apply_proposal.py --id <proposal_id> --approved-by <name>",
+    "Direct edits are possible (it is a text file) but leave no approval record,",
+    "so version_history below would no longer match reality."
+  ],
+  "version": "1.0.0",
+  "effective_from": "2025-01-01",
+  "owner": "legal_counsel",
+  "version_history": [
+    {
+      "version": "1.0.0",
+      "date": "2025-01-01",
+      "approved_by": "legal_counsel",
+      "note": "Initial playbook baseline."
+    }
+  ],
+  "standards": {
+    "indemnification": {
+      "must_be_limited_to_own_negligence": {
+        "value": true,
+        "severity_if_breached": "high",
+        "rationale": "Indemnifying an Owner for the Owner's own negligence is uninsurable under most professional liability policies. The firm carries the loss personally.",
+        "acceptable_language_example": "The Consultant shall indemnify the Owner from claims arising from the Consultant's negligent acts, errors, or omissions."
+      },
+      "duty_to_defend_permitted": {
+        "value": false,
+        "severity_if_breached": "high",
+        "rationale": "A duty to defend attaches immediately on allegation, before any finding of fault, and is typically excluded from professional liability coverage."
+      },
+      "fullest_extent_permitted_by_law_permitted": {
+        "value": false,
+        "severity_if_breached": "medium",
+        "rationale": "Open-ended exposure with no stated ceiling; the limit becomes whatever a future court decides."
+      }
+    },
+    "liability": {
+      "max_cap_multiple_of_fees": {
+        "value": 1.0,
+        "severity_if_breached": "high",
+        "rationale": "Firm standard is total liability capped at 1x fees paid. Source: J. Martinez review on CLZ-2025-0018.",
+        "acceptable_language_example": "The Consultant's total liability shall not exceed the total fees paid under this Agreement."
+      },
+      "cap_required": {
+        "value": true,
+        "severity_if_breached": "high",
+        "rationale": "An agreement with no liability cap is unbounded exposure."
+      }
+    },
+    "payment_terms": {
+      "max_days_to_pay": {
+        "value": 30,
+        "severity_if_breached": "medium",
+        "rationale": "Beyond 30 days the firm is financing the client's project from working capital."
+      },
+      "max_retainage_percent": {
+        "value": 5.0,
+        "severity_if_breached": "medium",
+        "rationale": "Retainage on professional services is non-standard; design work cannot be 'completed later' the way construction punch-list items can."
+      },
+      "late_interest_required": {
+        "value": true,
+        "severity_if_breached": "low",
+        "rationale": "Without an interest term there is no cost to the client for paying late."
+      },
+      "discretionary_withholding_permitted": {
+        "value": false,
+        "severity_if_breached": "high",
+        "rationale": "A unilateral right to withhold pending 'any dispute' lets a client suspend payment without proving cause."
+      }
+    },
+    "termination": {
+      "min_notice_days_for_convenience": {
+        "value": 30,
+        "severity_if_breached": "medium",
+        "rationale": "Below 30 days the firm cannot redeploy staff, and demobilisation costs land on us."
+      },
+      "demobilisation_costs_recoverable": {
+        "value": true,
+        "severity_if_breached": "medium",
+        "rationale": "Termination for convenience is the client's choice; its wind-down cost should not be ours."
+      }
+    },
+    "insurance": {
+      "max_professional_liability_per_claim_usd": {
+        "value": 5000000,
+        "severity_if_breached": "medium",
+        "rationale": "Above $5M per claim, cover typically requires a project-specific policy that must be priced into the fee rather than absorbed."
+      },
+      "max_tail_years_after_completion": {
+        "value": 3,
+        "severity_if_breached": "medium",
+        "rationale": "Each additional year of tail coverage carries a real premium that must be budgeted."
+      }
+    },
+    "scope_of_work": {
+      "open_ended_scope_language_permitted": {
+        "value": false,
+        "severity_if_breached": "medium",
+        "rationale": "'Including but not limited to' converts a fixed fee into an open commitment.",
+        "trigger_phrases": ["including but not limited to", "as may be required", "and all related services"]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "run_id": "agents__20260816T165247",
+  "generated_at": "2026-08-16T16:52:54.521Z",
+  "status": "complete",
+  "halt_reason": null,
+  "clauses_total": 20,
+  "clauses_processed": 20,
+  "clauses_not_processed": 0,
+  "model": {
+    "provider": "stub",
+    "name": "claude-sonnet-5",
+    "prompt_versions": {
+      "classifier": "classifier.v1",
+      "risk_flagger": "risk_flagger.v1"
+    }
+  },
+  "llm": {
+    "llm_calls": 14,
+    "llm_errors": 0,
+    "input_tokens": 4056,
+    "output_tokens": 560,
+    "total_tokens": 4616,
+    "cost_usd": 0.020568
+  },
+  "cache": {
+    "hits": 0,
+    "misses": 14,
+    "hit_rate": 0.0
+  },
+  "decided_by": {
+    "rule": 20,
+    "model": 14,
+    "human": 8
+  },
+  "severity": {
+    "high": 3,
+    "none": 9,
+    "medium": 6,
+    "low": 2
+  },
+  "guardrails": {
+    "budget": {
+      "tokens_spent": 4616,
+      "tokens_budget": 200000,
+      "tokens_fraction": 0.0231,
+      "cost_usd_spent": 0.020568,
+      "cost_usd_budget": 1.0,
+      "cost_fraction": 0.0206
+    },
+    "kill_switch": {
+      "processed": 17,
+      "failures": 0,
+      "failure_rate": 0.0,
+      "consecutive_failures": 0,
+      "tripped_reason": null
+    },
+    "scope": {
+      "max_clause_chars": 20000,
+      "min_clause_chars": 20,
+      "allowed_categories": [
+        "liability",
+        "insurance",
+        "indemnification",
+        "payment_terms",
+        "termination",
+        "scope_of_work",
+        "other"
+      ]
+    }
+  },
+  "audit": {
+    "audit_records": 42,
+    "human_overrides": 2,
+    "escalations": 1,
+    "learning_proposals": 1
+  },
+  "review_pending": 2
+}

@@ -1,0 +1,135 @@
+# phase2_agents/config/agents.yml
+# =============================================================================
+# HUMAN-OWNED. No agent writes here -- a test asserts it.
+#
+# This file is the control surface. Everything an operator can change without
+# touching code lives here: which model, which prompt version is ACTIVE, what
+# the budget is, when to escalate, when to stop.
+#
+# YAML rather than JSON because this file is read and edited by humans, and
+# comments are half its value. PyYAML arrives as a langchain dependency, so it
+# costs no extra install.
+#
+# TO CHANGE ANYTHING HERE:
+#   python phase2_agents/apply_proposal.py --id <id> --approved-by <name>
+# =============================================================================
+
+version: 1.0.0
+
+model:
+  # THE SWAP SEAM. This one value decides whether LLM calls are real.
+  #   stub      -> StubChatModel, deterministic, offline, free
+  #   anthropic -> ChatAnthropic, requires langchain-anthropic + ANTHROPIC_API_KEY
+  provider: stub
+  name: claude-sonnet-5
+  temperature: 0.0          # determinism is not optional in an audited pipeline
+  max_tokens: 1024
+  # Provider rate limit. NOT the budget -- this throttles, the budget stops.
+  # Against the stub it is a no-op, and llm.py says so rather than pretending.
+  rate_limit:
+    requests_per_second: 2.0
+    check_every_n_seconds: 0.1
+    max_bucket_size: 5
+  retry:
+    max_attempts: 3
+    exponential_base: 2.0
+
+# Price table lives in config because prices change. A hardcoded price is a
+# lie with a timestamp on it. USD per 1M tokens.
+pricing:
+  claude-sonnet-5:
+    input_per_1m: 3.0
+    output_per_1m: 15.0
+
+cache:
+  # Identical clause text + prompt version + model -> reuse the decision.
+  # Deterministic and audit-safe: a cache hit is logged as decided_by=cache,
+  # so an engineer can tell a reused decision from a recomputed one.
+  enabled: true
+  path: phase2_agents/output/.llm_cache.json
+
+# --- GUARDRAILS --------------------------------------------------------------
+guardrails:
+  budget:
+    # Business constraint. On breach the run STOPS; remaining clauses are
+    # marked not_processed. Never silently truncated.
+    max_total_tokens: 200000
+    max_cost_usd: 1.00
+    # Warn at this fraction so an operator sees it coming.
+    warn_at_fraction: 0.8
+  scope:
+    # Refuse rather than guess. Refusal is an escalation, not a silent skip.
+    max_clause_chars: 20000
+    min_clause_chars: 20
+    allowed_categories:
+      [liability, insurance, indemnification, payment_terms, termination, scope_of_work, other]
+  kill_switch:
+    # Halts ALL processing. Same STOP-file mechanism as Phase 1 ingestion.
+    stop_file: phase2_agents/output/STOP
+    max_consecutive_failures: 3
+    max_failure_rate: 0.25
+    min_records_before_rate_check: 8
+    # Resuming after a halt requires --acknowledge-halt "<reason>".
+    # If the switch tripped on an error rate, blindly re-running is exactly
+    # the wrong move, so a human has to say they looked.
+    require_acknowledgement_to_resume: true
+
+# --- AGENTS ------------------------------------------------------------------
+agents:
+  classifier:
+    enabled: true
+    # ACTIVE prompt version. Files may exist in config/prompts/ without being
+    # active; promoting one is a human decision made here, through
+    # apply_proposal.py. Otherwise "prompt versioning" is just bookkeeping.
+    prompt_version: classifier.v1
+    # Below this, escalate to a human instead of accepting the label.
+    escalate_below_confidence: 0.6
+    # Try deterministic rules first. Free, instant, reproducible, and easier
+    # to defend than a model. The LLM handles the ambiguous middle.
+    prefer_rules: true
+
+  risk_flagger:
+    enabled: true
+    prompt_version: risk_flagger.v1
+    escalate_below_confidence: 0.6
+    prefer_rules: true
+    # Cheap work gates expensive work: only these categories get a full risk
+    # pass. Scope-of-work and insurance boilerplate rarely earns one.
+    # Roughly 13 of our 20 clauses qualify.
+    risk_bearing_categories: [liability, indemnification, payment_terms, termination, insurance]
+    # Anything at or above this severity publishes with review_status=pending.
+    review_required_at_severity: high
+
+  auditor:
+    enabled: true
+    # How many times humans must overrule us in the same direction before the
+    # auditor writes a learning proposal. Below this it is noise, not a signal.
+    min_occurrences_for_proposal: 2
+
+# --- HUMAN-IN-THE-LOOP -------------------------------------------------------
+human_in_the_loop:
+  # Gate A: decision review. Advisory, non-blocking -- 20 approval prompts to
+  # process 20 clauses would make the system useless.
+  # Gate B: behaviour change. Blocking, no exceptions.
+  #
+  # An override changes the outcome for ONE clause.
+  # Only an approved proposal changes the RULE.
+  overrides_file: phase2_agents/output/human_overrides.jsonl
+  escalations_file: phase2_agents/output/escalations.jsonl
+  proposals_file: phase2_agents/output/learning_proposals.json
+  # Replay the operator decisions already present in the batch-2 data
+  # (review_history) instead of inventing fake overrides.
+  simulate_overrides_from_review_history: true
+
+output:
+  audit_log_jsonl: phase2_agents/output/audit_log.jsonl
+  audit_log_json: phase2_agents/output/audit_log.json
+  run_summary: phase2_agents/output/run_summary.json
+  gold_register: phase2_agents/output/gold/clause_risk_register.json
+  checkpoint: phase2_agents/output/_checkpoint.json
+
+input:
+  # Our own Phase 1 output, which is byte-identical to the provided
+  # clauses_ingested_fallback.json. Either would work.
+  silver: phase1_ingestion/output/silver/clauses.jsonl
+  supersession_proposals: phase1_ingestion/output/proposals/supersession_candidates.json

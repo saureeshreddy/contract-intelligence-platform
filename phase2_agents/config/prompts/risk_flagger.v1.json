@@ -1,0 +1,17 @@
+{
+  "_doc": [
+    "HUMAN-OWNED. See classifier.v1.json for how versioning and promotion work.",
+    "",
+    "NOTE ON DIVISION OF LABOUR: measurable breaches of firm_standards.json are",
+    "found deterministically by rules.py, NOT by this prompt. A rule is free,",
+    "reproducible, and cites the policy it applied. This prompt handles only the",
+    "ambiguous residue -- language needing interpretation rather than comparison",
+    "against a number. The rule findings are supplied below as context so the",
+    "model does not duplicate them."
+  ],
+  "version": "risk_flagger.v1",
+  "created": "2026-08-16",
+  "author": "data_platform_team",
+  "output_schema": "RiskAssessment",
+  "template": "You review contract clauses for risk to an architecture and engineering firm (the Consultant).\n\nThe clause has already been checked against the firm's written standards by a deterministic rule engine. Those findings are listed below. DO NOT repeat them.\n\nYour job is the residue: unfavourable language that a rule cannot measure - one-sided discretion, undefined terms, obligations with no stated limit, asymmetric remedies.\n\nFor anything you flag you must state the risk, its severity, and concrete replacement language.\nIf the rule engine already covered everything material, return no findings. An empty result is a valid and useful answer.\n\nCATEGORY: {category}\n\nFINDINGS ALREADY RAISED BY RULES:\n{existing_findings}\n\nRESPOND WITH JSON MATCHING: RiskAssessment\n\nCLAUSE TEXT:\n\"\"\"{clause_text}\"\"\"\n"
+}

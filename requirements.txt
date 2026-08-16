@@ -1,0 +1,18 @@
+# Phase 1 runs on the Python standard library alone.
+# Phase 2 needs these:
+langchain-core>=0.3.0      # chat model interface, callbacks, rate limiter
+pydantic>=2.0              # structured agent output, validated not parsed
+PyYAML>=6.0                # agents.yml (arrives with langchain anyway)
+
+# OPTIONAL -- route telemetry through the real OpenTelemetry SDK instead of the
+# built-in shim. Output files are identical either way; with the SDK installed,
+# setting OTEL_EXPORTER_OTLP_ENDPOINT also ships spans to a collector with no
+# code change. See common/observability.py and AD-8.
+# opentelemetry-sdk>=1.20.0
+# opentelemetry-exporter-otlp-proto-http>=1.20.0
+
+# OPTIONAL -- real LLM calls. Set model.provider: anthropic in
+# phase2_agents/config/agents.yml and export ANTHROPIC_API_KEY.
+# The chains, prompts, schemas, budget accounting and audit records are
+# unchanged; only the model object differs. See phase2_agents/llm.py.
+# langchain-anthropic>=0.3.0

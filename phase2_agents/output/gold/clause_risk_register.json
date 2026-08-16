@@ -1,0 +1,747 @@
+{
+  "contract_version": "1.0.0",
+  "run_id": "agents__20260816T165247",
+  "generated_at": "2026-08-16T16:52:54.507Z",
+  "firm_standards_version": "1.0.0",
+  "clause_count": 20,
+  "note": "Effective view after human review. Every entry traces to Bronze via `lineage`. `review_status: pending` means high severity that no human has signed off. `superseded_by` means Phase 1 believes the clause is no longer in force.",
+  "clauses": [
+    {
+      "clause_id": "CLZ-2025-0001",
+      "contract_id": "CTR-4401",
+      "client_name": "Meridian Health System",
+      "section_ref": "Section 8.1",
+      "source_category": "indemnification",
+      "review_category": "indemnification",
+      "classification_confidence": 0.95,
+      "classification_decided_by": "rule",
+      "overall_severity": "high",
+      "findings": [
+        {
+          "risk": "Indemnity extends to claims caused by the Owner's own negligence.",
+          "severity": "high",
+          "confidence": 1.0,
+          "standard_reference": "indemnification.must_be_limited_to_own_negligence",
+          "observed": "indemnity applies regardless of the Owner's negligence",
+          "expected": "indemnity limited to the Consultant's negligent acts, errors, or omissions",
+          "suggested_alternative": "The Consultant shall indemnify the Owner from claims arising from the Consultant's negligent acts, errors, or omissions.",
+          "precedent_clause_ids": [
+            "CLZ-2025-0007",
+            "CLZ-2025-0013"
+          ]
+        },
+        {
+          "risk": "Clause imposes a duty to defend, which attaches on allegation rather than on a finding of fault.",
+          "severity": "high",
+          "confidence": 1.0,
+          "standard_reference": "indemnification.duty_to_defend_permitted",
+          "observed": "duty to defend present",
+          "expected": "indemnify only; no separate duty to defend",
+          "suggested_alternative": "Strike 'defend' from the indemnity obligation, leaving indemnification for damages actually incurred.",
+          "precedent_clause_ids": [
+            "CLZ-2025-0007",
+            "CLZ-2025-0013"
+          ]
+        }
+      ],
+      "status": "proposed",
+      "review_status": "not_required",
+      "human_overrides": [],
+      "superseded_by": "CLZ-2025-0013",
+      "usage": null,
+      "lineage": {
+        "run_id": "clauses_batch_1__7f61df85",
+        "source_file": "clauses_batch_1.json",
+        "source_api_version": "2.1",
+        "record_index": 0,
+        "record_hash": "sha256:e4876bb7ef3e1021049cf842ce4133848a1195fade5bef859f1a7b17c80f6670",
+        "ingested_at": "2026-08-16T16:52:39.361Z"
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0002",
+      "contract_id": "CTR-4401",
+      "client_name": "Meridian Health System",
+      "section_ref": "Section 8.3",
+      "source_category": "limitation_of_liability",
+      "review_category": "liability",
+      "classification_confidence": 0.9,
+      "classification_decided_by": "rule",
+      "overall_severity": "none",
+      "findings": [],
+      "status": "proposed",
+      "review_status": "not_required",
+      "human_overrides": [],
+      "superseded_by": null,
+      "usage": null,
+      "lineage": {
+        "run_id": "clauses_batch_1__7f61df85",
+        "source_file": "clauses_batch_1.json",
+        "source_api_version": "2.1",
+        "record_index": 1,
+        "record_hash": "sha256:4085671c7bbcc694e1b2bab237c130b188d9fe454c6e79057c566a079c0f3a79",
+        "ingested_at": "2026-08-16T16:52:39.361Z"
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0003",
+      "contract_id": "CTR-4401",
+      "client_name": "Meridian Health System",
+      "section_ref": "Section 9.2",
+      "source_category": "insurance",
+      "review_category": "insurance",
+      "classification_confidence": 0.95,
+      "classification_decided_by": "rule",
+      "overall_severity": "medium",
+      "findings": [
+        {
+          "risk": "Tail coverage of 5 years after completion exceeds the firm standard of 3.",
+          "severity": "medium",
+          "confidence": 1.0,
+          "standard_reference": "insurance.max_tail_years_after_completion",
+          "observed": "5 years",
+          "expected": "3 years",
+          "suggested_alternative": "Reduce the tail requirement to 3 years, or price the additional premium into the fee.",
+          "precedent_clause_ids": [
+            "CLZ-2025-0016"
+          ]
+        }
+      ],
+      "status": "proposed",
+      "review_status": "not_required",
+      "human_overrides": [],
+      "superseded_by": null,
+      "usage": null,
+      "lineage": {
+        "run_id": "clauses_batch_1__7f61df85",
+        "source_file": "clauses_batch_1.json",
+        "source_api_version": "2.1",
+        "record_index": 2,
+        "record_hash": "sha256:74d1765a224b7b4a890415fee8e28a181485e696240cb629c478c988ab239ba8",
+        "ingested_at": "2026-08-16T16:52:39.361Z"
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0004",
+      "contract_id": "CTR-4422",
+      "client_name": "Northern State University",
+      "section_ref": "Section 5.1",
+      "source_category": "payment_terms",
+      "review_category": "payment_terms",
+      "classification_confidence": 0.95,
+      "classification_decided_by": "rule",
+      "overall_severity": "high",
+      "findings": [
+        {
+          "risk": "Payment due in 60 days, beyond the firm standard of 30.",
+          "severity": "medium",
+          "confidence": 1.0,
+          "standard_reference": "payment_terms.max_days_to_pay",
+          "observed": "60 days",
+          "expected": "30 days",
+          "suggested_alternative": "Reduce the payment period to 30 days from receipt of a properly submitted invoice.",
+          "precedent_clause_ids": [
+            "CLZ-2025-0011",
+            "CLZ-2025-0020"
+          ]
+        },
+        {
+          "risk": "Owner may withhold payment at its own initiative pending any dispute, with no objective test.",
+          "severity": "high",
+          "confidence": 1.0,
+          "standard_reference": "payment_terms.discretionary_withholding_permitted",
+          "observed": "unilateral right to withhold pending 'any disputes'",
+          "expected": "withholding permitted only for amounts actually in dispute, with written notice",
+          "suggested_alternative": "Limit withholding to the disputed amount, require written notice of the basis, and require payment of the undisputed balance.",
+          "precedent_clause_ids": [
+            "CLZ-2025-0011",
+            "CLZ-2025-0020"
+          ]
+        },
+        {
+          "risk": "No interest accrues on late payment, so there is no cost to the client for paying late.",
+          "severity": "low",
+          "confidence": 1.0,
+          "standard_reference": "payment_terms.late_interest_required",
+          "observed": "no late-payment interest term",
+          "expected": "interest accrues on overdue amounts",
+          "suggested_alternative": "Add: 'Late payments shall accrue interest at 1.5% per month until paid.'",
+          "precedent_clause_ids": [
+            "CLZ-2025-0011",
+            "CLZ-2025-0020"
+          ]
+        }
+      ],
+      "status": "proposed",
+      "review_status": "pending",
+      "human_overrides": [],
+      "superseded_by": null,
+      "usage": null,
+      "lineage": {
+        "run_id": "clauses_batch_1__7f61df85",
+        "source_file": "clauses_batch_1.json",
+        "source_api_version": "2.1",
+        "record_index": 3,
+        "record_hash": "sha256:55b8437aaa76b3ffb22eea9f342990562a80568ee7c049c362abd9218abb8fe5",
+        "ingested_at": "2026-08-16T16:52:39.361Z"
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0005",
+      "contract_id": "CTR-4422",
+      "client_name": "Northern State University",
+      "section_ref": "Section 12.2",
+      "source_category": "termination",
+      "review_category": "termination",
+      "classification_confidence": 0.95,
+      "classification_decided_by": "rule",
+      "overall_severity": "medium",
+      "findings": [
+        {
+          "risk": "Termination for convenience on 14 days' notice, below the firm standard of 30.",
+          "severity": "medium",
+          "confidence": 1.0,
+          "standard_reference": "termination.min_notice_days_for_convenience",
+          "observed": "14 days' notice",
+          "expected": "30 days' notice",
+          "suggested_alternative": "Extend notice for convenience to 30 days.",
+          "precedent_clause_ids": []
+        },
+        {
+          "risk": "Termination for convenience recovers no demobilisation cost; the client's choice is funded by us.",
+          "severity": "medium",
+          "confidence": 1.0,
+          "standard_reference": "termination.demobilisation_costs_recoverable",
+          "observed": "compensation limited to services performed",
+          "expected": "reasonable demobilisation and wind-down costs also recoverable",
+          "suggested_alternative": "Add recovery of reasonable demobilisation costs on termination for convenience.",
+          "precedent_clause_ids": []
+        }
+      ],
+      "status": "proposed",
+      "review_status": "not_required",
+      "human_overrides": [],
+      "superseded_by": null,
+      "usage": null,
+      "lineage": {
+        "run_id": "clauses_batch_1__7f61df85",
+        "source_file": "clauses_batch_1.json",
+        "source_api_version": "2.1",
+        "record_index": 4,
+        "record_hash": "sha256:4f484e9fe3a268ae4cce9ab605696007a62091e6f3efd8b9a3b0be9c4a03c9d0",
+        "ingested_at": "2026-08-16T16:52:39.361Z"
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0006",
+      "contract_id": "CTR-4422",
+      "client_name": "Northern State University",
+      "section_ref": "Section 2.1",
+      "source_category": "scope_of_work",
+      "review_category": "scope_of_work",
+      "classification_confidence": 0.95,
+      "classification_decided_by": "rule",
+      "overall_severity": "medium",
+      "findings": [
+        {
+          "risk": "Open-ended scope language converts a fixed fee into an unbounded commitment.",
+          "severity": "medium",
+          "confidence": 1.0,
+          "standard_reference": "scope_of_work.open_ended_scope_language_permitted",
+          "observed": "'including but not limited to'",
+          "expected": "an exhaustive, enumerated list of deliverables",
+          "suggested_alternative": "Replace open-ended phrasing with an enumerated deliverables list; handle additions through a change order.",
+          "precedent_clause_ids": [
+            "CLZ-2025-0017"
+          ]
+        }
+      ],
+      "status": "proposed",
+      "review_status": "not_required",
+      "human_overrides": [],
+      "superseded_by": null,
+      "usage": null,
+      "lineage": {
+        "run_id": "clauses_batch_1__7f61df85",
+        "source_file": "clauses_batch_1.json",
+        "source_api_version": "2.1",
+        "record_index": 5,
+        "record_hash": "sha256:a316dfa416f90fed3820e5fc5d38b3359a3eb1648f75464afd277bb7cca6b795",
+        "ingested_at": "2026-08-16T16:52:39.361Z"
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0007",
+      "contract_id": "CTR-4438",
+      "client_name": "DataVault Technologies",
+      "section_ref": "Section 7.1",
+      "source_category": "indemnification",
+      "review_category": "indemnification",
+      "classification_confidence": 0.95,
+      "classification_decided_by": "rule",
+      "overall_severity": "none",
+      "findings": [],
+      "status": "proposed",
+      "review_status": "not_required",
+      "human_overrides": [],
+      "superseded_by": null,
+      "usage": null,
+      "lineage": {
+        "run_id": "clauses_batch_1__7f61df85",
+        "source_file": "clauses_batch_1.json",
+        "source_api_version": "2.1",
+        "record_index": 6,
+        "record_hash": "sha256:4312aec8d071f7436d8cfa8782cfe628e792906a29c4829d8dd037e2e0b4265c",
+        "ingested_at": "2026-08-16T16:52:39.361Z"
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0008",
+      "contract_id": "CTR-4438",
+      "client_name": "DataVault Technologies",
+      "section_ref": "Section 9.1",
+      "source_category": "insurance",
+      "review_category": "insurance",
+      "classification_confidence": 0.95,
+      "classification_decided_by": "rule",
+      "overall_severity": "medium",
+      "findings": [
+        {
+          "risk": "Professional liability cover of $10,000,000 per claim exceeds the $5,000,000 the firm carries as standard.",
+          "severity": "medium",
+          "confidence": 1.0,
+          "standard_reference": "insurance.max_professional_liability_per_claim_usd",
+          "observed": "$10,000,000 per claim",
+          "expected": "$5,000,000 per claim",
+          "suggested_alternative": "Either reduce the requirement to standard limits, or price a project-specific policy into the fee.",
+          "precedent_clause_ids": [
+            "CLZ-2025-0016"
+          ]
+        }
+      ],
+      "status": "proposed",
+      "review_status": "not_required",
+      "human_overrides": [],
+      "superseded_by": null,
+      "usage": null,
+      "lineage": {
+        "run_id": "clauses_batch_1__7f61df85",
+        "source_file": "clauses_batch_1.json",
+        "source_api_version": "2.1",
+        "record_index": 7,
+        "record_hash": "sha256:c1359543f114cc3acabb90e35616d09811a2a63b92a9a5f0a0ba72fc055e73a6",
+        "ingested_at": "2026-08-16T16:52:39.361Z"
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0009",
+      "contract_id": "CTR-4438",
+      "client_name": "DataVault Technologies",
+      "section_ref": "Section 8.4",
+      "source_category": "consequential_damages",
+      "review_category": "liability",
+      "classification_confidence": 0.9,
+      "classification_decided_by": "rule",
+      "overall_severity": "none",
+      "findings": [],
+      "status": "proposed",
+      "review_status": "not_required",
+      "human_overrides": [],
+      "superseded_by": null,
+      "usage": null,
+      "lineage": {
+        "run_id": "clauses_batch_1__7f61df85",
+        "source_file": "clauses_batch_1.json",
+        "source_api_version": "2.1",
+        "record_index": 8,
+        "record_hash": "sha256:912ef4b08e65ad68c84666cba0efb429832bf038f949b69fc914d7381b3b457e",
+        "ingested_at": "2026-08-16T16:52:39.361Z"
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0010",
+      "contract_id": "CTR-4445",
+      "client_name": "Apex Federal Solutions",
+      "section_ref": "Section 10.1",
+      "source_category": "indemnification",
+      "review_category": "indemnification",
+      "classification_confidence": 0.95,
+      "classification_decided_by": "rule",
+      "overall_severity": "low",
+      "findings": [
+        {
+          "risk": "Clause imposes a duty to defend, which attaches on allegation rather than on a finding of fault.",
+          "severity": "high",
+          "confidence": 1.0,
+          "standard_reference": "indemnification.duty_to_defend_permitted",
+          "observed": "duty to defend present",
+          "expected": "indemnify only; no separate duty to defend",
+          "suggested_alternative": "Strike 'defend' from the indemnity obligation, leaving indemnification for damages actually incurred.",
+          "precedent_clause_ids": [
+            "CLZ-2025-0007",
+            "CLZ-2025-0013"
+          ]
+        },
+        {
+          "risk": "Open-ended indemnity ceiling: exposure is whatever a future court permits.",
+          "severity": "medium",
+          "confidence": 1.0,
+          "standard_reference": "indemnification.fullest_extent_permitted_by_law_permitted",
+          "observed": "'to the fullest extent permitted by law'",
+          "expected": "an explicit, bounded limit of liability",
+          "suggested_alternative": "Replace with an explicit cap tied to fees paid or to available insurance proceeds.",
+          "precedent_clause_ids": [
+            "CLZ-2025-0007",
+            "CLZ-2025-0013"
+          ]
+        }
+      ],
+      "status": "overridden",
+      "review_status": "resolved_by_override",
+      "human_overrides": [
+        "OVR-CLZ-2025-0010-02"
+      ],
+      "superseded_by": null,
+      "usage": null,
+      "lineage": {
+        "run_id": "clauses_batch_1__7f61df85",
+        "source_file": "clauses_batch_1.json",
+        "source_api_version": "2.1",
+        "record_index": 9,
+        "record_hash": "sha256:e171da1f6c04a7a897e78c6f5f30dac4c33bd9b295636343af3402012542108c",
+        "ingested_at": "2026-08-16T16:52:39.361Z"
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0011",
+      "contract_id": "CTR-4445",
+      "client_name": "Apex Federal Solutions",
+      "section_ref": "Section 4.2",
+      "source_category": "payment_terms",
+      "review_category": "payment_terms",
+      "classification_confidence": 0.95,
+      "classification_decided_by": "rule",
+      "overall_severity": "none",
+      "findings": [],
+      "status": "proposed",
+      "review_status": "not_required",
+      "human_overrides": [],
+      "superseded_by": null,
+      "usage": null,
+      "lineage": {
+        "run_id": "clauses_batch_1__7f61df85",
+        "source_file": "clauses_batch_1.json",
+        "source_api_version": "2.1",
+        "record_index": 10,
+        "record_hash": "sha256:98e2c2a7e7e9dd1fe16a753cc03f9fff726e3c8e34a8ff745d17efc0cc8aab46",
+        "ingested_at": "2026-08-16T16:52:39.361Z"
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0012",
+      "contract_id": "CTR-4445",
+      "client_name": "Apex Federal Solutions",
+      "section_ref": "Section 14.1",
+      "source_category": "security_clearance",
+      "review_category": "other",
+      "classification_confidence": 0.5,
+      "classification_decided_by": "rule",
+      "overall_severity": "none",
+      "findings": [],
+      "status": "escalated",
+      "review_status": "not_required",
+      "human_overrides": [],
+      "superseded_by": null,
+      "usage": null,
+      "lineage": {
+        "run_id": "clauses_batch_1__7f61df85",
+        "source_file": "clauses_batch_1.json",
+        "source_api_version": "2.1",
+        "record_index": 11,
+        "record_hash": "sha256:6f7c92903a951bc5880dbaed2216cd3f623fb2870a577947743136a07cf320b1",
+        "ingested_at": "2026-08-16T16:52:39.361Z"
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0013",
+      "contract_id": "CTR-4401",
+      "client_name": "Meridian Health System",
+      "section_ref": "Section 8.1 (Amended)",
+      "source_category": "indemnification",
+      "review_category": "indemnification",
+      "classification_confidence": 0.95,
+      "classification_decided_by": "rule",
+      "overall_severity": "none",
+      "findings": [],
+      "status": "proposed",
+      "review_status": "not_required",
+      "human_overrides": [],
+      "superseded_by": null,
+      "usage": null,
+      "lineage": {
+        "run_id": "clauses_batch_2__6a33ab9b",
+        "source_file": "clauses_batch_2.json",
+        "source_api_version": "2.3",
+        "record_index": 0,
+        "record_hash": "sha256:7110b14e7ab8e24373e5a7f3426ead572c9194683664047b31db38e607003762",
+        "ingested_at": "2026-08-16T16:52:39.698Z"
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0014",
+      "contract_id": "CTR-4452",
+      "client_name": "Greenfield Municipal Schools",
+      "section_ref": "Section 5.3",
+      "source_category": "payment_terms",
+      "review_category": "payment_terms",
+      "classification_confidence": 0.95,
+      "classification_decided_by": "rule",
+      "overall_severity": "medium",
+      "findings": [
+        {
+          "risk": "Payment due in 45 days, beyond the firm standard of 30.",
+          "severity": "medium",
+          "confidence": 1.0,
+          "standard_reference": "payment_terms.max_days_to_pay",
+          "observed": "45 days",
+          "expected": "30 days",
+          "suggested_alternative": "Reduce the payment period to 30 days from receipt of a properly submitted invoice.",
+          "precedent_clause_ids": [
+            "CLZ-2025-0011",
+            "CLZ-2025-0020"
+          ]
+        },
+        {
+          "risk": "Retainage of 10% exceeds the firm standard of 5%.",
+          "severity": "medium",
+          "confidence": 1.0,
+          "standard_reference": "payment_terms.max_retainage_percent",
+          "observed": "10% retainage",
+          "expected": "5% maximum",
+          "suggested_alternative": "Remove retainage on professional services, or cap it at the firm standard and release on substantial completion.",
+          "precedent_clause_ids": [
+            "CLZ-2025-0011",
+            "CLZ-2025-0020"
+          ]
+        },
+        {
+          "risk": "No interest accrues on late payment, so there is no cost to the client for paying late.",
+          "severity": "low",
+          "confidence": 1.0,
+          "standard_reference": "payment_terms.late_interest_required",
+          "observed": "no late-payment interest term",
+          "expected": "interest accrues on overdue amounts",
+          "suggested_alternative": "Add: 'Late payments shall accrue interest at 1.5% per month until paid.'",
+          "precedent_clause_ids": [
+            "CLZ-2025-0011",
+            "CLZ-2025-0020"
+          ]
+        }
+      ],
+      "status": "proposed",
+      "review_status": "not_required",
+      "human_overrides": [],
+      "superseded_by": null,
+      "usage": null,
+      "lineage": {
+        "run_id": "clauses_batch_2__6a33ab9b",
+        "source_file": "clauses_batch_2.json",
+        "source_api_version": "2.3",
+        "record_index": 1,
+        "record_hash": "sha256:588b947517507a98a51031dc373a98bb2aa61131fe1527a477063d4ae354e5b1",
+        "ingested_at": "2026-08-16T16:52:39.698Z"
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0015",
+      "contract_id": "CTR-4452",
+      "client_name": "Greenfield Municipal Schools",
+      "section_ref": "Section 11.1",
+      "source_category": "termination",
+      "review_category": "termination",
+      "classification_confidence": 0.95,
+      "classification_decided_by": "rule",
+      "overall_severity": "medium",
+      "findings": [
+        {
+          "risk": "Termination for convenience on 21 days' notice, below the firm standard of 30.",
+          "severity": "medium",
+          "confidence": 1.0,
+          "standard_reference": "termination.min_notice_days_for_convenience",
+          "observed": "21 days' notice",
+          "expected": "30 days' notice",
+          "suggested_alternative": "Extend notice for convenience to 30 days.",
+          "precedent_clause_ids": []
+        }
+      ],
+      "status": "proposed",
+      "review_status": "not_required",
+      "human_overrides": [],
+      "superseded_by": null,
+      "usage": null,
+      "lineage": {
+        "run_id": "clauses_batch_2__6a33ab9b",
+        "source_file": "clauses_batch_2.json",
+        "source_api_version": "2.3",
+        "record_index": 2,
+        "record_hash": "sha256:5e39a1f796aac39a9d0c64b140b5cf62fc13d06b79f31b05a9121187708b439a",
+        "ingested_at": "2026-08-16T16:52:39.698Z"
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0016",
+      "contract_id": "CTR-4452",
+      "client_name": "Greenfield Municipal Schools",
+      "section_ref": "Section 9.1",
+      "source_category": "insurance",
+      "review_category": "insurance",
+      "classification_confidence": 0.95,
+      "classification_decided_by": "rule",
+      "overall_severity": "none",
+      "findings": [],
+      "status": "proposed",
+      "review_status": "not_required",
+      "human_overrides": [],
+      "superseded_by": null,
+      "usage": null,
+      "lineage": {
+        "run_id": "clauses_batch_2__6a33ab9b",
+        "source_file": "clauses_batch_2.json",
+        "source_api_version": "2.3",
+        "record_index": 3,
+        "record_hash": "sha256:b4a04370399ce8bfe1cb12820082f3911e6aa1969eefba570877a3cd74b5e7ea",
+        "ingested_at": "2026-08-16T16:52:39.698Z"
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0017",
+      "contract_id": "CTR-4438",
+      "client_name": "DataVault Technologies",
+      "section_ref": "Section 2.1 (Amended)",
+      "source_category": "scope_of_work",
+      "review_category": "scope_of_work",
+      "classification_confidence": 0.95,
+      "classification_decided_by": "rule",
+      "overall_severity": "none",
+      "findings": [],
+      "status": "proposed",
+      "review_status": "not_required",
+      "human_overrides": [],
+      "superseded_by": null,
+      "usage": null,
+      "lineage": {
+        "run_id": "clauses_batch_2__6a33ab9b",
+        "source_file": "clauses_batch_2.json",
+        "source_api_version": "2.3",
+        "record_index": 4,
+        "record_hash": "sha256:83841732a944d33a673a4c91241c9e34f81764b2bd5352fdb1e6d8bdf4060a18",
+        "ingested_at": "2026-08-16T16:52:39.698Z"
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0018",
+      "contract_id": "CTR-4438",
+      "client_name": "DataVault Technologies",
+      "section_ref": "Section 8.2",
+      "source_category": "limitation_of_liability",
+      "review_category": "liability",
+      "classification_confidence": 0.9,
+      "classification_decided_by": "rule",
+      "overall_severity": "high",
+      "findings": [
+        {
+          "risk": "Liability cap of 2x fees exceeds the firm standard of 1x.",
+          "severity": "high",
+          "confidence": 1.0,
+          "standard_reference": "liability.max_cap_multiple_of_fees",
+          "observed": "2x total fees",
+          "expected": "1x total fees",
+          "suggested_alternative": "The Consultant's total liability shall not exceed the total fees paid under this Agreement.",
+          "precedent_clause_ids": [
+            "CLZ-2025-0002",
+            "CLZ-2025-0009"
+          ]
+        }
+      ],
+      "status": "proposed",
+      "review_status": "pending",
+      "human_overrides": [],
+      "superseded_by": null,
+      "usage": null,
+      "lineage": {
+        "run_id": "clauses_batch_2__6a33ab9b",
+        "source_file": "clauses_batch_2.json",
+        "source_api_version": "2.3",
+        "record_index": 5,
+        "record_hash": "sha256:c0ee7375f91bc0376548315fa09f382893bacb716ed53abe58b109e1ce084bf7",
+        "ingested_at": "2026-08-16T16:52:39.698Z"
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0019",
+      "contract_id": "CTR-4460",
+      "client_name": "Lakeshore Regional Medical Center",
+      "section_ref": "Section 7.1",
+      "source_category": "indemnification",
+      "review_category": "indemnification",
+      "classification_confidence": 0.95,
+      "classification_decided_by": "rule",
+      "overall_severity": "low",
+      "findings": [
+        {
+          "risk": "Clause imposes a duty to defend, which attaches on allegation rather than on a finding of fault.",
+          "severity": "high",
+          "confidence": 1.0,
+          "standard_reference": "indemnification.duty_to_defend_permitted",
+          "observed": "duty to defend present",
+          "expected": "indemnify only; no separate duty to defend",
+          "suggested_alternative": "Strike 'defend' from the indemnity obligation, leaving indemnification for damages actually incurred.",
+          "precedent_clause_ids": [
+            "CLZ-2025-0007",
+            "CLZ-2025-0013"
+          ]
+        }
+      ],
+      "status": "overridden",
+      "review_status": "resolved_by_override",
+      "human_overrides": [
+        "OVR-CLZ-2025-0019-01"
+      ],
+      "superseded_by": null,
+      "usage": null,
+      "lineage": {
+        "run_id": "clauses_batch_2__6a33ab9b",
+        "source_file": "clauses_batch_2.json",
+        "source_api_version": "2.3",
+        "record_index": 6,
+        "record_hash": "sha256:9e84d013df871335ed2c5dcd5dd617a4df9cafa34361c67ec50252924b4601e2",
+        "ingested_at": "2026-08-16T16:52:39.698Z"
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0020",
+      "contract_id": "CTR-4460",
+      "client_name": "Lakeshore Regional Medical Center",
+      "section_ref": "Section 4.1",
+      "source_category": "payment_terms",
+      "review_category": "payment_terms",
+      "classification_confidence": 0.95,
+      "classification_decided_by": "rule",
+      "overall_severity": "none",
+      "findings": [],
+      "status": "proposed",
+      "review_status": "not_required",
+      "human_overrides": [],
+      "superseded_by": null,
+      "usage": null,
+      "lineage": {
+        "run_id": "clauses_batch_2__6a33ab9b",
+        "source_file": "clauses_batch_2.json",
+        "source_api_version": "2.3",
+        "record_index": 7,
+        "record_hash": "sha256:946e04597c788f7cc6eef380be4323ad0aee891ff2798dc997bd1b292ea37db2",
+        "ingested_at": "2026-08-16T16:52:39.698Z"
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-08-16T16:52:39.361Z",
+  "run_id": "clauses_batch_1__7f61df85",
+  "source": "contract_management_api",
+  "api_version": "2.1",
+  "compared_against": "none (first batch from this source)",
+  "schema_fingerprint": "sha256:155c4bde0776b877dcc4d22369f473ec396be52a6eef46245814543f3752620e",
+  "record_count": 12,
+  "drift_detected": false,
+  "requires_human_action": false,
+  "summary": {},
+  "events": [],
+  "guarantee": "All records in this batch were written to Bronze unchanged, regardless of the drift reported above. Drift detection never filters, rewrites, or rejects data."
+}

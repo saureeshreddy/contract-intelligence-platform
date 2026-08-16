@@ -1,0 +1,97 @@
+{
+  "generated_at": "2026-08-16T16:53:06.254Z",
+  "ground_truth_version": "1.0.0",
+  "clause_count": 20,
+  "model": "stub:claude-sonnet-5",
+  "prompt_version": "classifier.v1",
+  "firm_standards_version": "1.0.0",
+  "classification": {
+    "mode": "as_configured",
+    "n": 20,
+    "correct": 20,
+    "accuracy": 1.0,
+    "by_decision_path": {
+      "rule": {
+        "n": 20,
+        "correct": 20,
+        "accuracy": 1.0
+      }
+    },
+    "mean_confidence_when_correct": 0.92,
+    "mean_confidence_when_wrong": null,
+    "misclassified": [],
+    "confusion": {},
+    "cost_usd": 0.0,
+    "llm_calls": 0
+  },
+  "classification_modes": [
+    {
+      "mode": "as_configured",
+      "n": 20,
+      "correct": 20,
+      "accuracy": 1.0,
+      "by_decision_path": {
+        "rule": {
+          "n": 20,
+          "correct": 20,
+          "accuracy": 1.0
+        }
+      },
+      "mean_confidence_when_correct": 0.92,
+      "mean_confidence_when_wrong": null,
+      "misclassified": [],
+      "confusion": {},
+      "cost_usd": 0.0,
+      "llm_calls": 0
+    },
+    {
+      "mode": "model_only",
+      "n": 20,
+      "correct": 20,
+      "accuracy": 1.0,
+      "by_decision_path": {
+        "model": {
+          "n": 19,
+          "correct": 19,
+          "accuracy": 1.0
+        },
+        "rule": {
+          "n": 1,
+          "correct": 1,
+          "accuracy": 1.0
+        }
+      },
+      "mean_confidence_when_correct": 0.8315,
+      "mean_confidence_when_wrong": null,
+      "misclassified": [],
+      "confusion": {},
+      "cost_usd": 0.03006,
+      "llm_calls": 19
+    }
+  ],
+  "risk": {
+    "clause_level": {
+      "true_positives": 11,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "standard_level": {
+      "true_positives": 18,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "_note": "Flagged for the right REASON, not merely flagged. A finding that is right by accident is a latent bug."
+    },
+    "disagreements": []
+  },
+  "caveats": [
+    "20 clauses, one annotator: a regression detector, not a measurement.",
+    "The stub classifier's keywords were chosen against this corpus; a high classification score measures the harness, not the model.",
+    "Risk-detection labels were derived independently of rules.py, so those figures are the informative ones."
+  ]
+}

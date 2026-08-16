@@ -1,0 +1,49 @@
+{
+  "_doc": [
+    "HUMAN-OWNED FILE. Nothing in this pipeline writes here.",
+    "",
+    "When the source API renames a field, drift.py detects it by value-set overlap",
+    "and writes a SUSPECTED_RENAME into output/drift/drift_report.md. It does NOT",
+    "act on its own conclusion, because a wrong auto-mapping would silently corrupt",
+    "every downstream classification. A human reads the report and adds the mapping",
+    "here. normalize.py reads only this file.",
+    "",
+    "Until a mapping is confirmed here, normalize.py emits null for the target field",
+    "and lists the unmapped source field in the record's _unmapped_fields array.",
+    "The gap is visible; it is never silently filled in.",
+    "",
+    "This is the same machine-proposes / human-approves boundary that Phase 2",
+    "requires for agent learning, applied one layer earlier to schema meaning."
+  ],
+  "target_fields": [
+    "clause_id",
+    "contract_id",
+    "client_name",
+    "project_name",
+    "clause_category",
+    "clause_text",
+    "section_ref",
+    "effective_date",
+    "expiration_date",
+    "status",
+    "last_modified",
+    "modified_by",
+    "review_history"
+  ],
+  "aliases": {
+    "clause_type": {
+      "target": "clause_category",
+      "seen_in_api_version": "2.1",
+      "confirmed_by": "data_platform_team",
+      "confirmed_at": "2025-11-15T00:00:00Z",
+      "note": "Original field name from the v2.1 contract API."
+    },
+    "category": {
+      "target": "clause_category",
+      "seen_in_api_version": "2.3",
+      "confirmed_by": "data_platform_team",
+      "confirmed_at": "2025-12-01T00:00:00Z",
+      "note": "Confirmed after reviewing drift_report.md for run clauses_batch_2__*. Value-set overlap with clause_type was 0.75; a human verified the six shared category values before approving this mapping."
+    }
+  }
+}

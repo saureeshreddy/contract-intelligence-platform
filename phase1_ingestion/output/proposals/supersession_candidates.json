@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-08-16T16:52:40.549Z",
+  "generated_by": "phase1_ingestion/supersede.py",
+  "clauses_examined": 20,
+  "proposal_count": 2,
+  "status": "PENDING_HUMAN_REVIEW",
+  "authority": "ADVISORY ONLY. This file records machine-generated proposals. Nothing in the pipeline reads it back to change behaviour. Silver is unmodified.",
+  "detection_method": "Clauses grouped by contract_id + section number, with '(Amended)' markers stripped. Section numbering is a convention, not a guarantee, so every match is a candidate for human review rather than a conclusion.",
+  "proposals": [
+    {
+      "proposal_id": "SUP-CLZ-2025-0001",
+      "kind": "SUPERSESSION_CANDIDATE",
+      "status": "PENDING_HUMAN_REVIEW",
+      "contract_id": "CTR-4401",
+      "section": "8.1",
+      "superseded_clause_id": "CLZ-2025-0001",
+      "superseding_clause_id": "CLZ-2025-0013",
+      "evidence": {
+        "same_contract_and_section": true,
+        "superseding_section_ref": "Section 8.1 (Amended)",
+        "superseded_section_ref": "Section 8.1",
+        "superseding_marked_amended": true,
+        "superseded_last_modified": "2025-10-22T09:15:00Z",
+        "superseding_last_modified": "2025-11-28T15:30:00Z",
+        "superseding_review_notes": [
+          "Original clause contained broad indemnification \u2014 revised to negligence standard",
+          "Revised language acceptable"
+        ]
+      },
+      "impact_if_confirmed": "CLZ-2025-0001 is no longer in force. Downstream risk review should exclude it, or flag it as historical.",
+      "action_required": "A human must confirm. If confirmed, record the supersession in the source system; do NOT edit Silver by hand -- Silver is regenerated from Bronze and any manual edit is lost on the next run."
+    },
+    {
+      "proposal_id": "ORPHAN-CLZ-2025-0017",
+      "kind": "AMENDS_UNKNOWN_CLAUSE",
+      "status": "PENDING_HUMAN_REVIEW",
+      "contract_id": "CTR-4438",
+      "section": "2.1",
+      "clause_id": "CLZ-2025-0017",
+      "evidence": {
+        "section_ref": "Section 2.1 (Amended)",
+        "matching_original_found": false
+      },
+      "impact_if_confirmed": "We hold an amendment but never received the clause it amends, so our view of this contract section is incomplete.",
+      "action_required": "Confirm with the source system whether an earlier version of this section exists and was missed by a previous export."
+    }
+  ]
+}

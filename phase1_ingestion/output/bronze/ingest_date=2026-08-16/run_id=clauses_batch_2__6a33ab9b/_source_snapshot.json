@@ -1,0 +1,197 @@
+{
+  "metadata": {
+    "source": "contract_management_api",
+    "api_version": "2.3",
+    "exported_at": "2025-12-01T10:00:00Z",
+    "page": 1,
+    "total_pages": 1,
+    "record_count": 8
+  },
+  "clauses": [
+    {
+      "clause_id": "CLZ-2025-0013",
+      "contract_id": "CTR-4401",
+      "client_name": "Meridian Health System",
+      "project_name": "Meridian West Tower Expansion",
+      "category": "indemnification",
+      "clause_text": "The Consultant's indemnification obligations under this Agreement shall be limited to claims arising from the Consultant's negligent acts, errors, or omissions. The Consultant shall have no obligation to indemnify the Owner for claims arising from the Owner's negligence or the negligence of other parties.",
+      "section_ref": "Section 8.1 (Amended)",
+      "effective_date": "2025-09-01",
+      "expiration_date": "2028-08-31",
+      "status": "active",
+      "last_modified": "2025-11-28T15:30:00Z",
+      "review_history": {
+        "reviews": [
+          {
+            "reviewer": "J. Martinez",
+            "date": "2025-11-20",
+            "action": "flagged",
+            "notes": "Original clause contained broad indemnification — revised to negligence standard"
+          },
+          {
+            "reviewer": "K. Chen",
+            "date": "2025-11-28",
+            "action": "approved",
+            "notes": "Revised language acceptable"
+          }
+        ],
+        "review_count": 2,
+        "last_review_date": "2025-11-28"
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0014",
+      "contract_id": "CTR-4452",
+      "client_name": "Greenfield Municipal Schools",
+      "project_name": "Greenfield K-8 STEM Academy",
+      "category": "payment_terms",
+      "clause_text": "Payment shall be made within forty-five (45) days of receipt of invoice. The Owner may withhold up to 10% of each invoice as retainage, to be released upon substantial completion and final acceptance of all deliverables.",
+      "section_ref": "Section 5.3",
+      "effective_date": "2025-12-01",
+      "expiration_date": "2028-11-30",
+      "status": "under_review",
+      "last_modified": "2025-12-01T09:00:00Z",
+      "review_history": {
+        "reviews": [
+          {
+            "reviewer": "M. Thompson",
+            "date": "2025-11-30",
+            "action": "flagged",
+            "notes": "Retainage clause is non-standard — needs legal review"
+          }
+        ],
+        "review_count": 1,
+        "last_review_date": "2025-11-30"
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0015",
+      "contract_id": "CTR-4452",
+      "client_name": "Greenfield Municipal Schools",
+      "project_name": "Greenfield K-8 STEM Academy",
+      "category": "termination",
+      "clause_text": "Either party may terminate this Agreement for cause upon thirty (30) days written notice if the other party fails to cure a material breach within the notice period. The Owner may terminate for convenience upon twenty-one (21) days notice with compensation for completed work plus reasonable demobilization costs.",
+      "section_ref": "Section 11.1",
+      "effective_date": "2025-12-01",
+      "expiration_date": "2028-11-30",
+      "status": "active",
+      "last_modified": "2025-12-01T09:00:00Z",
+      "review_history": {
+        "reviews": [],
+        "review_count": 0,
+        "last_review_date": null
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0016",
+      "contract_id": "CTR-4452",
+      "client_name": "Greenfield Municipal Schools",
+      "project_name": "Greenfield K-8 STEM Academy",
+      "category": "insurance",
+      "clause_text": "The Consultant shall maintain Professional Liability Insurance with minimum coverage of $2,000,000 per claim and $4,000,000 aggregate. Workers' Compensation Insurance as required by state law. Commercial General Liability of $1,000,000 per occurrence.",
+      "section_ref": "Section 9.1",
+      "effective_date": "2025-12-01",
+      "expiration_date": "2028-11-30",
+      "status": "active",
+      "last_modified": "2025-12-01T09:00:00Z",
+      "review_history": {
+        "reviews": [],
+        "review_count": 0,
+        "last_review_date": null
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0017",
+      "contract_id": "CTR-4438",
+      "client_name": "DataVault Technologies",
+      "project_name": "DV Southeast Data Center Campus",
+      "category": "scope_of_work",
+      "clause_text": "The Consultant shall provide full MEP engineering design services for the 250,000 SF Tier IV data center facility, including redundant power distribution (2N), precision cooling systems, fire suppression, and building management system integration. Design shall comply with Uptime Institute Tier IV requirements.",
+      "section_ref": "Section 2.1 (Amended)",
+      "effective_date": "2025-10-01",
+      "expiration_date": "2028-09-30",
+      "status": "active",
+      "last_modified": "2025-11-25T11:20:00Z",
+      "review_history": {
+        "reviews": [
+          {
+            "reviewer": "R. Patel",
+            "date": "2025-11-22",
+            "action": "expanded",
+            "notes": "Added BMS integration and Tier IV compliance requirement per client request"
+          }
+        ],
+        "review_count": 1,
+        "last_review_date": "2025-11-22"
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0018",
+      "contract_id": "CTR-4438",
+      "client_name": "DataVault Technologies",
+      "project_name": "DV Southeast Data Center Campus",
+      "category": "limitation_of_liability",
+      "clause_text": "The Consultant's total aggregate liability under this Agreement shall not exceed two times (2x) the total fees paid under this Agreement. This limitation shall not apply to claims arising from the Consultant's willful misconduct or fraudulent acts.",
+      "section_ref": "Section 8.2",
+      "effective_date": "2025-10-01",
+      "expiration_date": "2028-09-30",
+      "status": "under_review",
+      "last_modified": "2025-11-30T08:45:00Z",
+      "review_history": {
+        "reviews": [
+          {
+            "reviewer": "J. Martinez",
+            "date": "2025-11-29",
+            "action": "flagged",
+            "notes": "2x multiplier exceeds firm standard — recommend capping at 1x total fees"
+          }
+        ],
+        "review_count": 1,
+        "last_review_date": "2025-11-29"
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0019",
+      "contract_id": "CTR-4460",
+      "client_name": "Lakeshore Regional Medical Center",
+      "project_name": "LRMC Emergency Department Renovation",
+      "category": "indemnification",
+      "clause_text": "Each party shall indemnify the other party from claims arising from its own negligent acts or omissions. Neither party shall be required to indemnify the other for the other party's negligence. The duty to defend shall run concurrently with the duty to indemnify.",
+      "section_ref": "Section 7.1",
+      "effective_date": "2026-01-15",
+      "expiration_date": "2028-12-31",
+      "status": "draft",
+      "last_modified": "2025-12-01T10:00:00Z",
+      "review_history": {
+        "reviews": [
+          {
+            "reviewer": "K. Chen",
+            "date": "2025-12-01",
+            "action": "approved",
+            "notes": "Mutual indemnification — favorable terms"
+          }
+        ],
+        "review_count": 1,
+        "last_review_date": "2025-12-01"
+      }
+    },
+    {
+      "clause_id": "CLZ-2025-0020",
+      "contract_id": "CTR-4460",
+      "client_name": "Lakeshore Regional Medical Center",
+      "project_name": "LRMC Emergency Department Renovation",
+      "category": "payment_terms",
+      "clause_text": "The Owner shall make payment within thirty (30) days of receipt of a properly submitted invoice. No retainage shall be withheld. Late payments shall accrue interest at a rate of 1.5% per month.",
+      "section_ref": "Section 4.1",
+      "effective_date": "2026-01-15",
+      "expiration_date": "2028-12-31",
+      "status": "draft",
+      "last_modified": "2025-12-01T10:00:00Z",
+      "review_history": {
+        "reviews": [],
+        "review_count": 0,
+        "last_review_date": null
+      }
+    }
+  ]
+}

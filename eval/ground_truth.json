@@ -1,0 +1,175 @@
+{
+  "_doc": [
+    "HUMAN-AUTHORED GROUND TRUTH. 20 clauses labelled by reading each one against",
+    "phase2_agents/config/firm_standards.json v1.0.0.",
+    "",
+    "WHAT THIS IS AND IS NOT:",
+    "  * 20 items labelled by one person. A smoke test, not a statistical evaluation.",
+    "    Treat movement as a signal to investigate, not as a measurement.",
+    "  * Labels are deliberately NOT copied from Silver's `clause_category`. The",
+    "    classifier's rule path reads that field, so using it as ground truth would",
+    "    score the code against its own input and always return 100%.",
+    "  * `expected_standards` was derived by reading clause text against the policy",
+    "    file, independent of rules.py. That makes the risk-detection numbers the",
+    "    genuinely informative ones here.",
+    "",
+    "In production this is replaced by counsel-reviewed labels over a few hundred",
+    "clauses, versioned alongside firm_standards.json -- a labelled set is only",
+    "valid for the policy version it was labelled under."
+  ],
+  "version": "1.0.0",
+  "labelled_against_firm_standards": "1.0.0",
+  "labeller": "data_platform_team",
+  "clause_count": 20,
+  "labels": {
+    "CLZ-2025-0001": {
+      "expected_category": "indemnification",
+      "should_flag": true,
+      "expected_standards": [
+        "indemnification.must_be_limited_to_own_negligence",
+        "indemnification.duty_to_defend_permitted"
+      ],
+      "notes": "Indemnity covers the Owner's own negligence, and 'defend' is present."
+    },
+    "CLZ-2025-0002": {
+      "expected_category": "liability",
+      "should_flag": false,
+      "expected_standards": [],
+      "notes": "Cap is 1x fees, exactly the firm standard."
+    },
+    "CLZ-2025-0003": {
+      "expected_category": "insurance",
+      "should_flag": true,
+      "expected_standards": [
+        "insurance.max_tail_years_after_completion"
+      ],
+      "notes": "5-year tail exceeds the 3-year standard. $5M per claim is at the limit, not over it."
+    },
+    "CLZ-2025-0004": {
+      "expected_category": "payment_terms",
+      "should_flag": true,
+      "expected_standards": [
+        "payment_terms.max_days_to_pay",
+        "payment_terms.discretionary_withholding_permitted",
+        "payment_terms.late_interest_required"
+      ],
+      "notes": "60 days, unilateral withholding, no interest term."
+    },
+    "CLZ-2025-0005": {
+      "expected_category": "termination",
+      "should_flag": true,
+      "expected_standards": [
+        "termination.min_notice_days_for_convenience",
+        "termination.demobilisation_costs_recoverable"
+      ],
+      "notes": "14 days' notice and no demobilisation recovery."
+    },
+    "CLZ-2025-0006": {
+      "expected_category": "scope_of_work",
+      "should_flag": true,
+      "expected_standards": [
+        "scope_of_work.open_ended_scope_language_permitted"
+      ],
+      "notes": "'including but not limited to'."
+    },
+    "CLZ-2025-0007": {
+      "expected_category": "indemnification",
+      "should_flag": false,
+      "expected_standards": [],
+      "notes": "Limited to the Consultant's negligence, with an explicit carve-out. No duty to defend."
+    },
+    "CLZ-2025-0008": {
+      "expected_category": "insurance",
+      "should_flag": true,
+      "expected_standards": [
+        "insurance.max_professional_liability_per_claim_usd"
+      ],
+      "notes": "$10M professional liability exceeds the $5M standard."
+    },
+    "CLZ-2025-0009": {
+      "expected_category": "liability",
+      "should_flag": false,
+      "expected_standards": [],
+      "notes": "Mutual waiver of consequential damages; favourable."
+    },
+    "CLZ-2025-0010": {
+      "expected_category": "indemnification",
+      "should_flag": true,
+      "expected_standards": [
+        "indemnification.duty_to_defend_permitted",
+        "indemnification.fullest_extent_permitted_by_law_permitted"
+      ],
+      "notes": "Duty to defend plus an open-ended ceiling."
+    },
+    "CLZ-2025-0011": {
+      "expected_category": "payment_terms",
+      "should_flag": false,
+      "expected_standards": [],
+      "notes": "30 days and Prompt Payment Act interest."
+    },
+    "CLZ-2025-0012": {
+      "expected_category": "other",
+      "should_flag": false,
+      "expected_standards": [],
+      "notes": "Security clearance / NIST 800-171. Real clause type, no home in the seven-category taxonomy."
+    },
+    "CLZ-2025-0013": {
+      "expected_category": "indemnification",
+      "should_flag": false,
+      "expected_standards": [],
+      "notes": "Negligence standard with an explicit Owner-negligence carve-out. This is the amendment that fixed CLZ-2025-0001."
+    },
+    "CLZ-2025-0014": {
+      "expected_category": "payment_terms",
+      "should_flag": true,
+      "expected_standards": [
+        "payment_terms.max_days_to_pay",
+        "payment_terms.max_retainage_percent",
+        "payment_terms.late_interest_required"
+      ],
+      "notes": "45 days, 10% retainage, no interest term."
+    },
+    "CLZ-2025-0015": {
+      "expected_category": "termination",
+      "should_flag": true,
+      "expected_standards": [
+        "termination.min_notice_days_for_convenience"
+      ],
+      "notes": "21 days for convenience. Demobilisation IS recoverable, so that standard must not fire."
+    },
+    "CLZ-2025-0016": {
+      "expected_category": "insurance",
+      "should_flag": false,
+      "expected_standards": [],
+      "notes": "$2M per claim, no tail requirement."
+    },
+    "CLZ-2025-0017": {
+      "expected_category": "scope_of_work",
+      "should_flag": false,
+      "expected_standards": [],
+      "notes": "Enumerated MEP scope; no open-ended trigger phrase."
+    },
+    "CLZ-2025-0018": {
+      "expected_category": "liability",
+      "should_flag": true,
+      "expected_standards": [
+        "liability.max_cap_multiple_of_fees"
+      ],
+      "notes": "2x cap exceeds the 1x standard. J. Martinez flagged this in review_history."
+    },
+    "CLZ-2025-0019": {
+      "expected_category": "indemnification",
+      "should_flag": true,
+      "expected_standards": [
+        "indemnification.duty_to_defend_permitted"
+      ],
+      "notes": "Mutual indemnity, but duty to defend is present. K. Chen accepted it -- the flag is still correct; the acceptance is a business decision."
+    },
+    "CLZ-2025-0020": {
+      "expected_category": "payment_terms",
+      "should_flag": false,
+      "expected_standards": [],
+      "notes": "30 days, no retainage, 1.5%/month interest."
+    }
+  }
+}

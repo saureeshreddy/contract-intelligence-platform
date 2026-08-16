@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.DS_Store
+.idea/
+.vscode/
+
+# NOTE: neither phase1_ingestion/output/ nor output/logs/ is ignored.
+# The brief requires submitting "all output files your code produces", so the
+# Bronze layer, drift reports, Silver dataset, proposals and telemetry are all
+# committed. Everything is fully regenerable with ./run_phase1.sh
+#
+#   phase1_ingestion/output/   phase deliverables (bronze, silver, drift, proposals)
+#   output/logs/               telemetry, shared across phases -- see AD-9
